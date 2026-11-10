@@ -2,7 +2,11 @@
 
 Clean-room, dependency-free **Home Assistant Custom Integration (`custom_components/dahua_h5a`)**, **async Python library (`aio_dahua_h5a`)**, and **CLI (`dahua-h5a`)** for 100% local control of **Dahua H5A 5MP 360° Indoor Wi-Fi 6 (`DH-H5A` / `IPC-H5A`)** and Hero-series cameras over **TCP Port `37777` (NetSDK DVR2 `0xa0` + Embedded JSON-RPC `0xf6`)** and **RTSP Port `554`**.
 
-Reconstructed via static reverse engineering of Dahua's macOS/Windows `ConfigTool` (`libdhnetsdk.so`, `libdhconfigsdk.so`, `dhnetsdk.dll`) and Android `DMSS` (`libnetsdk.so`, `libconfigsdk.so`) without using any proprietary vendor binaries or cloud services.
+> **Legal & Interoperability Notice (EU Directive 2009/24/EC Art. 6 & § 69e UrhG):**  
+> This clean-room open-source project was created **solely for interoperability**—enabling legal owners of Dahua H5A / Hero-series cameras to integrate their own hardware with open-source smart home systems (**Home Assistant**) on a local network, in accordance with **Article 6 of EU Directive 2009/24/EC** and **§ 69e of the German Copyright Act (UrhG)**.  
+> - **No circumvention of security or access controls:** Valid administrator credentials (`username` and `password`) for the device are strictly required.  
+> - **Zero vendor code:** This repository contains **no** proprietary Dahua SDK libraries, binary blobs, or firmware files—only an independent Python `asyncio` implementation built from scratch by **Google Antigravity**.  
+> - **No affiliation:** Not affiliated with, endorsed by, or supported by Dahua Technology.
 
 ---
 

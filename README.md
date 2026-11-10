@@ -1,5 +1,9 @@
 # open-dahua-h5a (`aio-dahua-h5a` & Home Assistant HACS Integration)
 
+<p align="center">
+  <img src="assets/dahua-h5a-camera.webp" alt="Dahua H5A / Hero Series Indoor PT Camera" width="220" />
+</p>
+
 Clean-room, dependency-free **Home Assistant Custom Integration (`custom_components/dahua_h5a`)**, **async Python library (`aio_dahua_h5a`)**, and **CLI (`dahua-h5a`)** for 100% local control of **Dahua H5A 5MP 360° Indoor Wi-Fi 6 (`DH-H5A` / `IPC-H5A`)** and Hero-series cameras over **TCP Port `37777` (NetSDK DVR2 `0xa0` + Embedded JSON-RPC `0xf6`)** and **RTSP Port `554`**.
 
 > **Legal & Interoperability Notice (EU Directive 2009/24/EC Art. 6 & § 69e UrhG):**  
@@ -29,6 +33,8 @@ The repository is structured as a ready-to-install **HACS Integration** (`custom
 5. Repeat **Add Integration** for as many cameras as you have—each camera is uniquely identified by its hardware serial number (`magicBox.getSerialNo`) and maintains its own isolated TCP `37777` connection and real-time event stream.
 
 ### Exposed Home Assistant Entities (per camera)
+
+![Dahua H5A Live Device View in Home Assistant](assets/dahua-h5a-home-assistant-live-device.webp)
 
 - **Camera**: 5MP H.265 Live Stream (`subtype=0`) or Sub Stream (`subtype=1`), RTSP JPEG Snapshots, Turn On/Off mapped to physical Privacy Shutter, plus entity services (`dahua_h5a.ptz_move`, `dahua_h5a.ptz_goto_preset`, `dahua_h5a.ptz_set_preset`, `dahua_h5a.ptz_remove_preset`, `dahua_h5a.trigger_siren`).
 - **Switches (10)**: Privacy Mask (Hide Lens), AI Human Detection, AI Pet Detection, AI Smart Auto-Tracking, Motion Detection, Abnormal Sound / Baby Cry Detection, Status Indicator LED, Stream Audio Recording, Image Mirror, Image Flip (180° Ceiling Mount).

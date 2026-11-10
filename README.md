@@ -5,7 +5,7 @@ Clean-room, dependency-free **Home Assistant Custom Integration (`custom_compone
 > **Legal & Interoperability Notice (EU Directive 2009/24/EC Art. 6 & § 69e UrhG):**  
 > This clean-room open-source project was created **solely for interoperability**—enabling legal owners of Dahua H5A / Hero-series cameras to integrate their own hardware with open-source smart home systems (**Home Assistant**) on a local network, in accordance with **Article 6 of EU Directive 2009/24/EC** and **§ 69e of the German Copyright Act (UrhG)**.  
 > - **No circumvention of security or access controls:** Valid administrator credentials (`username` and `password`) for the device are strictly required.  
-> - **Zero vendor code:** This repository contains **no** proprietary Dahua SDK libraries, binary blobs, or firmware files—only an independent Python `asyncio` implementation built from scratch by **Google Antigravity**.  
+> - **Zero vendor code:** This repository contains **no** proprietary Dahua SDK libraries, binary blobs, or firmware files—only an independent Python `asyncio` implementation built from scratch by **Google Antigravity (Gemini 4 Argon High)**.  
 > - **No affiliation:** Not affiliated with, endorsed by, or supported by Dahua Technology.
 
 ---

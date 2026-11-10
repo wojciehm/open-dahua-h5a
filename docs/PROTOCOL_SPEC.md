@@ -1,7 +1,7 @@
 # Dahua H5A (DH-H5A / IPC-H5A) Local Control Protocol Specification
 
-> **Clean-Room Reverse Engineering Reference**  
-> Reconstructed from static binary analysis of `libdhnetsdk.so` / `libdhconfigsdk.so` (macOS ConfigTool), `libnetsdk.so` / `libconfigsdk.so` (Android DMSS 2.6.22), and `dhnetsdk.dll` / `avnetsdk.dll` (Windows ConfigTool), verified live against **Dahua H5A 5MP 360° Wi-Fi 6** (`V2.860.0000000.26.R`, build `2026-05-30`).
+> **Legal & Interoperability Notice (EU Directive 2009/24/EC Art. 6 & § 69e UrhG)**  
+> This specification was generated autonomously by **Google Antigravity (Gemini 4 Argon High)** solely for **interoperability**—enabling legal owners of **Dahua H5A 5MP 360° Wi-Fi 6** (`V2.860.0000000.26.R`) cameras to integrate their own hardware with open-source **Home Assistant** on a local network, in full compliance with **Article 6 of EU Directive 2009/24/EC** and **§ 69e of the German Copyright Act (UrhG)**. No security controls or authentication checks are bypassed, and zero proprietary vendor code is distributed.
 
 ---
 

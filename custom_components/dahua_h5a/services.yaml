@@ -1,0 +1,123 @@
+ptz_move:
+  name: Move PTZ
+  description: Move the Dahua H5A pan/tilt motor in the specified direction.
+  target:
+    entity:
+      integration: dahua_h5a
+      domain: camera
+  fields:
+    direction:
+      name: Direction
+      description: Movement direction (up, down, left, right, left_up, right_up, left_down, right_down).
+      required: true
+      selector:
+        select:
+          options:
+            - up
+            - down
+            - left
+            - right
+            - left_up
+            - right_up
+            - left_down
+            - right_down
+    speed:
+      name: Speed
+      description: Movement speed (1-8).
+      default: 4
+      selector:
+        number:
+          min: 1
+          max: 8
+          mode: slider
+    duration:
+      name: Duration (seconds)
+      description: How long to move before stopping (0.1 - 10.0 seconds).
+      default: 0.5
+      selector:
+        number:
+          min: 0.1
+          max: 10.0
+          step: 0.1
+          mode: box
+
+ptz_goto_preset:
+  name: Go to PTZ preset
+  description: Move the camera to a saved PTZ preset index.
+  target:
+    entity:
+      integration: dahua_h5a
+      domain: camera
+  fields:
+    preset_id:
+      name: Preset ID
+      description: Numeric preset ID (1-255).
+      required: true
+      default: 1
+      selector:
+        number:
+          min: 1
+          max: 255
+          mode: box
+
+ptz_set_preset:
+  name: Save PTZ preset
+  description: Save the current camera position as a named PTZ preset.
+  target:
+    entity:
+      integration: dahua_h5a
+      domain: camera
+  fields:
+    preset_id:
+      name: Preset ID
+      description: Numeric preset ID (1-255).
+      required: true
+      default: 1
+      selector:
+        number:
+          min: 1
+          max: 255
+          mode: box
+    name:
+      name: Preset Name
+      description: Display name for the preset.
+      required: true
+      example: "Sypialnia"
+      selector:
+        text:
+
+ptz_remove_preset:
+  name: Delete PTZ preset
+  description: Remove a saved PTZ preset from the camera.
+  target:
+    entity:
+      integration: dahua_h5a
+      domain: camera
+  fields:
+    preset_id:
+      name: Preset ID
+      description: Numeric preset ID (1-255).
+      required: true
+      selector:
+        number:
+          min: 1
+          max: 255
+          mode: box
+
+trigger_siren:
+  name: Trigger alarm siren
+  description: Trigger the camera's built-in alarm siren for the specified duration.
+  target:
+    entity:
+      integration: dahua_h5a
+      domain: camera
+  fields:
+    duration:
+      name: Duration (seconds)
+      description: Duration in seconds (1-60).
+      default: 10
+      selector:
+        number:
+          min: 1
+          max: 60
+          mode: slider

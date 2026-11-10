@@ -1,0 +1,166 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Add Dahua H5A / Hero Camera",
+        "description": "Connect locally to a Dahua H5A / Hero-series camera over the proprietary NetSDK TCP port (37777) and RTSP port (554). You can add multiple cameras—each camera is identified by its hardware serial number.",
+        "data": {
+          "host": "Camera IP / Hostname",
+          "port": "NetSDK TCP Port",
+          "rtsp_port": "RTSP Port",
+          "username": "Username",
+          "password": "Password"
+        }
+      },
+      "reconfigure": {
+        "title": "Reconfigure Dahua H5A Camera",
+        "description": "Update IP address, ports, or credentials for this camera.",
+        "data": {
+          "host": "Camera IP / Hostname",
+          "port": "NetSDK TCP Port",
+          "rtsp_port": "RTSP Port",
+          "username": "Username",
+          "password": "Password"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Failed to connect to the camera on TCP port 37777",
+      "invalid_auth": "Invalid username or password (DVR2 0xa0 authentication failed)",
+      "unknown": "Unexpected error occurred"
+    },
+    "abort": {
+      "already_configured": "This camera is already configured",
+      "reconfigure_successful": "Camera configuration updated successfully"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Dahua H5A Options",
+        "data": {
+          "scan_interval": "State polling interval (seconds)",
+          "stream_subtype": "RTSP Video Stream Profile"
+        }
+      }
+    }
+  },
+  "entity": {
+    "camera": {
+      "camera": {
+        "name": "Live Stream"
+      }
+    },
+    "switch": {
+      "privacy_mode": {
+        "name": "Privacy Mask (Hide Lens)"
+      },
+      "human_detection": {
+        "name": "AI Human Detection"
+      },
+      "pet_detection": {
+        "name": "AI Pet Detection"
+      },
+      "smart_tracking": {
+        "name": "AI Smart Auto-Tracking"
+      },
+      "motion_detection": {
+        "name": "Motion Detection"
+      },
+      "audio_detection": {
+        "name": "Abnormal Sound / Baby Cry Detection"
+      },
+      "status_led": {
+        "name": "Status Indicator LED"
+      },
+      "audio_encode": {
+        "name": "Stream Audio Recording"
+      },
+      "mirror": {
+        "name": "Image Mirror (Horizontal)"
+      },
+      "flip": {
+        "name": "Image Flip (180° Ceiling Mount)"
+      }
+    },
+    "select": {
+      "night_vision_mode": {
+        "name": "Night Vision IR Mode",
+        "state": {
+          "auto": "Auto (ICR)",
+          "off": "Off (Day Only)",
+          "on": "On (IR Night)"
+        }
+      },
+      "ptz_preset": {
+        "name": "PTZ Preset"
+      }
+    },
+    "number": {
+      "speaker_volume": {
+        "name": "Speaker Volume"
+      },
+      "microphone_volume": {
+        "name": "Microphone Sensitivity"
+      },
+      "audio_sensitivity": {
+        "name": "Sound Detection Sensitivity"
+      }
+    },
+    "button": {
+      "ptz_up": {
+        "name": "PTZ Tilt Up"
+      },
+      "ptz_down": {
+        "name": "PTZ Tilt Down"
+      },
+      "ptz_left": {
+        "name": "PTZ Pan Left"
+      },
+      "ptz_right": {
+        "name": "PTZ Pan Right"
+      },
+      "siren": {
+        "name": "Trigger Siren"
+      },
+      "ptz_calibrate": {
+        "name": "Calibrate PTZ"
+      }
+    },
+    "binary_sensor": {
+      "motion": {
+        "name": "Motion"
+      },
+      "human_detected": {
+        "name": "Person Detected"
+      },
+      "sound_detected": {
+        "name": "Sound / Cry Detected"
+      },
+      "privacy_active": {
+        "name": "Privacy Shutter Closed",
+        "state": {
+          "on": "Closed",
+          "off": "Open"
+        }
+      }
+    },
+    "sensor": {
+      "sd_status": {
+        "name": "MicroSD Card Status"
+      },
+      "sd_used_percent": {
+        "name": "MicroSD Used"
+      },
+      "sd_free_gb": {
+        "name": "MicroSD Free Space"
+      },
+      "ptz_pan": {
+        "name": "PTZ Pan Angle"
+      },
+      "ptz_tilt": {
+        "name": "PTZ Tilt Angle"
+      }
+    }
+  }
+}

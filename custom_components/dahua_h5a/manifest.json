@@ -5,6 +5,7 @@
   "config_flow": true,
   "documentation": "https://github.com/wojciehm/open-dahua-h5a",
   "iot_class": "local_push",
+  "integration_type": "hub",
   "issue_tracker": "https://github.com/wojciehm/open-dahua-h5a/issues",
   "requirements": [],
   "version": "0.2.3"

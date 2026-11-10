@@ -171,6 +171,10 @@ class DahuaNetSdkProtocolClient:
             and self._session_id != 0
         )
 
+    @property
+    def is_connected(self) -> bool:
+        return self.connected
+
     def register_event_callback(
         self, callback: Callable[[CameraEvent], Any]
     ) -> Callable[[], None]:

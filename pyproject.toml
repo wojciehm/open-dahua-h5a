@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "aio-dahua-h5a"
-version = "0.1.0"
+version = "0.2.2"
 description = "Clean-room async Python library and CLI for local control of Dahua H5A 5MP 360° Wi-Fi 6 indoor cameras over Port 37777 (NetSDK DVR2 + JSON-RPC)"
 readme = "README.md"
 license = { text = "MIT" }

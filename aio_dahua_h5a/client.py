@@ -660,16 +660,19 @@ class DahuaH5AClient:
         self,
         direction: str,
         speed: int = 4,
-        arg1: int = 0,
+        arg1: int | None = None,
+        arg2: int | None = None,
         arg3: int = 0,
     ) -> bool:
         """Start continuous PTZ movement in `direction` (`Up`, `Down`, `Left`, `Right`, etc.)."""
         code = PTZ_DIRECTION_MAP.get(direction.strip().lower(), direction)
         spd = max(1, min(8, int(speed)))
+        a1 = spd if arg1 is None else int(arg1)
+        a2 = spd if arg2 is None else int(arg2)
         obj_id = await self._get_ptz_object()
         resp = await self.rpc(
             "ptz.start",
-            {"code": code, "arg1": arg1, "arg2": spd, "arg3": arg3},
+            {"channel": 0, "code": code, "arg1": a1, "arg2": a2, "arg3": arg3},
             object_id=obj_id,
             raise_on_error=True,
         )
@@ -681,7 +684,7 @@ class DahuaH5AClient:
         obj_id = await self._get_ptz_object()
         resp = await self.rpc(
             "ptz.stop",
-            {"code": code, "arg1": 0, "arg2": 1, "arg3": 0},
+            {"channel": 0, "code": code, "arg1": 0, "arg2": 0, "arg3": 0},
             object_id=obj_id,
             raise_on_error=True,
         )

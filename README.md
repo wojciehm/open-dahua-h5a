@@ -48,23 +48,23 @@ The repository is structured as a ready-to-install **HACS Integration** (`custom
 
 ## Supported Camera Features
 
-| Feature | Port `37777` RPC / Config Table | CLI Subcommand |
+| Feature | Port `37777` RPC / Config Table | CLI Subcommand (`odh`) |
 | :--- | :--- | :--- |
-| **Privacy Mode (Physical Lens Mask)** | `AELensMask` (`Status: true/false`) | `dahua-h5a privacy [on\|off]` |
-| **AI Human Detection** | `SmartMotionDetect` (`ObjectTypes.Human`) | `dahua-h5a human-detect [on\|off]` |
-| **AI Pet / Animal Detection** | `SmartMotionDetect` (`ObjectTypes.Animal`) | `dahua-h5a pet-detect [on\|off]` |
-| **Smart Auto-Tracking (PTZ)** | `SmartMotionDetect` (`SmartTrack`) | `dahua-h5a smart-track [on\|off]` |
-| **Motion Detection & Sensitivity** | `MotionDetect` + `SmartMotionDetect` (`Low`/`Middle`/`High`) | `dahua-h5a motion-detect [on\|off] [--sensitivity ...]` |
-| **Abnormal Sound / Baby Cry Detection** | `AudioDetect` (`Enable`, `AnomalyDetect`, `AnomalySensitive`) | `dahua-h5a audio-detect [on\|off] [--sensitivity 1..100]` |
-| **Front Status Indicator LED** | `LightGlobal` (`Enable`) | `dahua-h5a led [on\|off]` |
-| **Night Vision & ICR Filter** | `Lighting` (`Auto`/`Manual`/`Off`) + `VideoInDayNight` (`Brightness`/`Color`/`BlackWhite`) | `dahua-h5a night-vision [auto\|night\|day]` |
-| **Image 180° Flip & Horizontal Mirror** | `VideoInOptions` + `VideoImageControl` | `dahua-h5a flip [on\|off]`, `dahua-h5a mirror [on\|off]` |
-| **Mic / Speaker Volume & Denoise** | `AudioInputVolume`, `AudioOutputVolume`, `AudioInDenoise`, `Encode` | `dahua-h5a volume [--mic N] [--speaker N] [--denoise on\|off]` |
-| **Built-in Siren / Audio Alarm** | `CoaxialControlIO` + `speak` + `Sound` | `dahua-h5a siren [status\|on\|off] [--duration S] [--volume N]` |
-| **PTZ Pan / Tilt / Presets / Calibration** | `ptz.factory.instance` -> `ptz.start`, `ptz.stop`, `ptz.gotoPreset`, `ptz.restartPtz` | `dahua-h5a ptz <up\|down\|left\|right\|preset\|calibrate>` |
-| **MicroSD Storage Telemetry** | `storage.getDeviceAllInfo` | `dahua-h5a storage` |
-| **Real-Time Event Stream** | `eventManager.attach` -> `client.notifyEventStream` & `eventManager.getEventIndexes` | `dahua-h5a events` |
-| **5MP RTSP Snapshot & Streams** | `rtsp://<host>:554/cam/realmonitor?channel=1&subtype=0\|1` | `dahua-h5a snapshot -o snap.jpg` |
+| **Privacy Mode (Physical Lens Mask)** | `AELensMask` (`Status: true/false`) | `odh privacy [on\|off]` |
+| **AI Human Detection** | `SmartMotionDetect` (`ObjectTypes.Human`) | `odh human-detect [on\|off]` |
+| **AI Pet / Animal Detection** | `SmartMotionDetect` (`ObjectTypes.Animal`) | `odh pet-detect [on\|off]` |
+| **Smart Auto-Tracking (PTZ)** | `SmartMotionDetect` (`SmartTrack`) | `odh smart-track [on\|off]` |
+| **Motion Detection & Sensitivity** | `MotionDetect` + `SmartMotionDetect` (`Low`/`Middle`/`High`) | `odh motion-detect [on\|off] [--sensitivity ...]` |
+| **Abnormal Sound / Baby Cry Detection** | `AudioDetect` (`Enable`, `AnomalyDetect`, `AnomalySensitive`) | `odh audio-detect [on\|off] [--sensitivity 1..100]` |
+| **Front Status Indicator LED** | `LightGlobal` (`Enable`) | `odh led [on\|off]` |
+| **Night Vision & ICR Filter** | `Lighting` (`Auto`/`Manual`/`Off`) + `VideoInDayNight` (`Brightness`/`Color`/`BlackWhite`) | `odh night-vision [auto\|night\|day]` |
+| **Image 180° Flip & Horizontal Mirror** | `VideoInOptions` + `VideoImageControl` | `odh flip [on\|off]`, `odh mirror [on\|off]` |
+| **Mic / Speaker Volume & Denoise** | `AudioInputVolume`, `AudioOutputVolume`, `AudioInDenoise`, `Encode` | `odh volume [--mic N] [--speaker N] [--denoise on\|off]` |
+| **Built-in Siren / Audio Alarm** | `CoaxialControlIO` + `speak` + `Sound` | `odh siren [status\|on\|off] [--duration S] [--volume N]` |
+| **PTZ Pan / Tilt / Presets / Calibration** | `ptz.factory.instance` -> `ptz.start`, `ptz.stop`, `ptz.gotoPreset`, `ptz.restartPtz` | `odh ptz <up\|down\|left\|right\|preset\|calibrate>` |
+| **MicroSD Storage Telemetry** | `storage.getDeviceAllInfo` | `odh storage` |
+| **Real-Time Event Stream** | `eventManager.attach` -> `client.notifyEventStream` & `eventManager.getEventIndexes` | `odh events` |
+| **5MP RTSP Snapshot & Streams** | `rtsp://<host>:554/cam/realmonitor?channel=1&subtype=0\|1` | `odh snapshot -o snap.jpg` |
 
 ---
 
@@ -77,38 +77,40 @@ uv pip install --python .venv/bin/python -e ".[dev]"
 
 ---
 
-## CLI Usage (`dahua-h5a`)
+## CLI Usage (`odh` / `dahua-h5a`)
+
+> **Note:** The CLI binary is available as **`odh`** (Open Dahua) or **`dahua-h5a`**. Both commands accept identical flags and subcommands.
 
 ```bash
 # Hardware, firmware, and RTSP URLs
-dahua-h5a info
+odh info
 
 # Complete camera state (privacy, AI, LED, night vision, volumes, PTZ, MicroSD, active alarms)
-dahua-h5a status
+odh status
 
 # Toggle Privacy Mode (physical lens mask)
-dahua-h5a privacy on
-dahua-h5a privacy off
+odh privacy on
+odh privacy off
 
 # Toggle AI Human / Pet Detection & Auto-Tracking
-dahua-h5a human-detect on
-dahua-h5a pet-detect on
-dahua-h5a smart-track on
+odh human-detect on
+odh pet-detect on
+odh smart-track on
 
 # Status LED & Night Vision
-dahua-h5a led off
-dahua-h5a night-vision auto
+odh led off
+odh night-vision auto
 
 # PTZ Control & Presets
-dahua-h5a presets
-dahua-h5a ptz left --speed 4 --duration 0.35
-dahua-h5a ptz preset --index 1
+odh presets
+odh ptz left --speed 4 --duration 0.35
+odh ptz preset --index 1
 
 # Capture 5MP JPEG Snapshot via RTSP
-dahua-h5a snapshot -o snapshot.jpg
+odh snapshot -o snapshot.jpg
 
 # Subscribe to real-time motion / human / pet / cry events
-dahua-h5a events
+odh events
 ```
 
 ---

@@ -41,8 +41,11 @@ def _parse_bool(value: str) -> bool:
 
 
 def _build_parser() -> argparse.ArgumentParser:
+    prog_name = "odh" if not sys.argv or not sys.argv[0] else Path(sys.argv[0]).name
+    if prog_name.startswith("python"):
+        prog_name = "odh"
     parser = argparse.ArgumentParser(
-        prog="dahua-h5a",
+        prog=prog_name,
         description="Local Port 37777 NetSDK/JSON-RPC controller for Dahua H5A 360° cameras",
     )
     parser.add_argument(

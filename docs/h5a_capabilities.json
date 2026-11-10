@@ -1,0 +1,1489 @@
+{
+  "device": {
+    "model": "DH-H5A",
+    "hardware_version": "1.00",
+    "software_version": "2.860.0000000.26.R",
+    "build_date": "2026-05-30",
+    "vendor": "Dahua"
+  },
+  "ports": {
+    "netsdk_dvr2_jsonrpc": 37777,
+    "rtsp": 554,
+    "onvif_http": 80
+  },
+  "product_definition": {
+    "AbroadInfo": "Oversea",
+    "AlarmOutLatch": [
+      10,
+      300
+    ],
+    "AnomalyDetect": false,
+    "AudioCloseAlg": true,
+    "AudioFileManager": {
+      "CustomAudioPath": "/mnt/mtd/audiofiles/",
+      "PlayFormet": [
+        "aac",
+        "mp3",
+        "pcm",
+        "wav"
+      ],
+      "PlayRootPath": "/usr/data/audiofiles/siren/;/mnt/mtd/audiofiles/",
+      "SirenFileManager": {
+        "Support": true,
+        "SupportEventLinkList": [
+          "SmartMotionHuman",
+          "SmartMotionAnimal",
+          "SmartMotionVehicle",
+          "VideoMotion"
+        ]
+      },
+      "Support": true,
+      "SupportEventLinkList": [
+        "SmartMotionHuman",
+        "SmartMotionAnimal",
+        "SmartMotionVehicle",
+        "VideoMotion"
+      ],
+      "SupportRecordAudio": true,
+      "VoiceLinkFileOptional": true,
+      "VoicePlayTimesRange": [
+        1,
+        10
+      ]
+    },
+    "AudioProperties": {
+      "Support": true
+    },
+    "BusinessDivision": {
+      "DownLoadByFile": false,
+      "Monitor": false,
+      "SnapAttach": false,
+      "StreamPlayback": false,
+      "Tunnel": true
+    },
+    "CameraAttribute": {
+      "Support": true
+    },
+    "CameraSwitchComV": "V3",
+    "CloudOperation": {
+      "SupportConfigImportAndExport": true
+    },
+    "CommonOSDCount": 1,
+    "ConfigBackupFilelist": {
+      "NoExportConfig": [
+        "Network",
+        "DVRIP",
+        "VideoStandard",
+        "Https",
+        "NetAddrIPv4",
+        "IPv6",
+        "LoginRestriction",
+        "Web",
+        "RTSP",
+        "VSP_GAYS",
+        "T2UServer",
+        "VSP_PaaS",
+        "DigestAlgorithm",
+        "OnvifDigestAlgorithm",
+        "PtzRemLocation"
+      ],
+      "VersionType": "Encrypt"
+    },
+    "CustomLanguages": "/usr/pd/custom/i18n",
+    "CustomOSDTitle": {
+      "Support": true,
+      "TitleLine": 1,
+      "WebExtensionTitleLine": 1
+    },
+    "DDNS": true,
+    "DH2Caps": {
+      "VideoWaterMark": {
+        "Support": 1,
+        "Type": 0
+      }
+    },
+    "DVRIP_TLS": true,
+    "DecodeBuf": [
+      [
+        1,
+        1
+      ],
+      [
+        0,
+        300
+      ],
+      [
+        1000,
+        2000
+      ]
+    ],
+    "DeviceWebCaps": {
+      "SupportLocalWebSource": false,
+      "SupportWebService": false
+    },
+    "DisarmEventNotify": {
+      "DisableLinkageEventWhiteList": [
+        "IPConflict",
+        "NetAbort",
+        "SafetyAbnormal",
+        "SceneChange",
+        "StorageFailure",
+        "StorageHealthAbnormal",
+        "StorageLowSpace",
+        "StorageNotExist",
+        "UserLock",
+        "VideoBlind",
+        "VideoUnFocus",
+        "VoltageDetect"
+      ],
+      "Support": true,
+      "UnSupportDirections": [
+        "LEFTDOWN",
+        "LEFTUP",
+        "RIGHTDOWN",
+        "RIGHTUP"
+      ]
+    },
+    "EncodingResolutionLimit": [
+      [
+        "2880x1620",
+        "2304x1296",
+        "1080P",
+        "720P"
+      ],
+      [
+        "640x360",
+        "QVGA"
+      ],
+      null,
+      null,
+      [
+        "640x360",
+        "QVGA"
+      ]
+    ],
+    "ExtensionGeographyTitleLine": 4,
+    "ExtraIPSmooth": [
+      1,
+      0,
+      0
+    ],
+    "FontColour": {
+      "Support": false
+    },
+    "FontSize": {
+      "Support": false
+    },
+    "FontUnification": {
+      "BasicFontHeight": 12,
+      "Support": false
+    },
+    "GetPasswdDescriptWay": "AB",
+    "HardResetTime": 4,
+    "HasPtz": true,
+    "HttpPath": "/usr/data/Http",
+    "IEEE802_1X": false,
+    "IEEE802_1XDef": {
+      "Method": [
+        "PEAP",
+        "TLS"
+      ]
+    },
+    "IPCExposureCompensation": true,
+    "IPCRecordBatchDownload": true,
+    "IPTableFilter": {
+      "RulesNum": 64,
+      "SemiConnectAttack": true,
+      "Support": false
+    },
+    "IdleMotion": {
+      "Action": [
+        "Preset"
+      ],
+      "Support": true
+    },
+    "IntelliTypeMap": [
+      {
+        "Intelli": "Normal",
+        "type": 2077
+      }
+    ],
+    "IntensityDetect": false,
+    "IsErs": true,
+    "IsPlaceOsd": true,
+    "IsRecordMultiEventQuery": true,
+    "IsRecordTypeQuery": true,
+    "IsRiskTipEnable": {
+      "SupportV2.1": true
+    },
+    "IsSimplifiedPtz": true,
+    "IsWBRegionalCustom": true,
+    "LED": [
+      {
+        "LedType": "Power",
+        "Support": true
+      }
+    ],
+    "LeChargePromptToneMap": [
+      {
+        "AudioPath": "/usr/data/audiofiles/hintaudios/reset.aac",
+        "Code": "RestoreDefault"
+      },
+      {
+        "AudioPath": "/usr/data/audiofiles/hintaudios/l_s.aac",
+        "Code": "WaitingConfigWifi"
+      },
+      {
+        "AudioPath": "/usr/data/audiofiles/hintaudios/c_suc.aac",
+        "Code": "NetWorkConnectSuccess"
+      },
+      {
+        "AudioPath": "/usr/data/audiofiles/hintaudios/c_f.aac",
+        "Code": "NetWorkConnectPasswordErr"
+      },
+      {
+        "AudioPath": "/usr/data/audiofiles/hintaudios/storage_err.aac",
+        "Code": "StorageFailure"
+      },
+      {
+        "AudioPath": "/usr/data/audiofiles/hintaudios/l_s.aac",
+        "Code": "APEnter"
+      },
+      {
+        "AudioPath": "/usr/data/audiofiles/hintaudios/exitAP.aac",
+        "Code": "APExit"
+      },
+      {
+        "AudioPath": "/usr/data/audiofiles/hintaudios/calling_now.aac",
+        "Code": "Calling"
+      },
+      {
+        "AudioPath": "/usr/data/audiofiles/hintaudios/call.aac",
+        "Code": "Call"
+      },
+      {
+        "AudioPath": "/usr/data/audiofiles/hintaudios/callfailed.aac",
+        "Code": "CallFailed"
+      }
+    ],
+    "LegalinfoCaps": {
+      "openSourceNotice": true,
+      "privacyPolicy": true,
+      "softwareLicense": true
+    },
+    "LensMaskCaps": {
+      "Support": true,
+      "SupportByTime": true
+    },
+    "LightGlobal": {
+      "Support": true
+    },
+    "LogoOSD": {
+      "Support": true
+    },
+    "MJPEGBitRateRange": {
+      "All": [
+        2,
+        4096
+      ]
+    },
+    "MainIPSmooth": [
+      1
+    ],
+    "ManagerModifyPwd": true,
+    "MaxCoverCount": 0,
+    "MaxGeographyTitleLine": 4,
+    "MaxMainStreamBitrate": 4096,
+    "MaxPreRecordTime": 2,
+    "MaxSizeOfChannelTitle": 63,
+    "MaxSizeOfCustomOSDTitle": 45,
+    "MaxSizeOfGeography": 45,
+    "MediaFileFindMaxNum": 500,
+    "MotionDetectWindow": 4,
+    "MoveAbsolutely": {
+      "PTZ": [
+        "Pan",
+        "Tile"
+      ],
+      "Type": [
+        "Normal",
+        "Real"
+      ]
+    },
+    "MutationDetect": true,
+    "MutliEventSnapImmediately": true,
+    "OSDConflictTable": [
+      [
+        "ChannelTitle",
+        "LogoOsd"
+      ]
+    ],
+    "OnvifUserSynchronousInitialization": true,
+    "PasswdFindWay": "BC",
+    "PreLanguage": "/mnt/mtd/Config/preLanguage",
+    "PresetPwd": false,
+    "Private": {
+      "AudioFile": {
+        "BuiltInPath": [
+          {
+            "FileType": "Normal",
+            "Path": "/usr/data/audiofiles/siren/",
+            "PlayType": "ByTimes"
+          }
+        ],
+        "Format": [
+          "aac",
+          "mp3",
+          "wav"
+        ],
+        "MaxFileUploadNum": 3,
+        "MaxRecordFileTime": 20,
+        "MaxUploadFileSize": 102400,
+        "MaxUploadFileTime": 20,
+        "TotalUploadSpace": 307200,
+        "UploadFilePath": [
+          {
+            "FileType": "Normal",
+            "Path": "/dev/mtd9/",
+            "PlayType": "ByTimes"
+          }
+        ]
+      }
+    },
+    "PrivateProtocolTLSOption": {
+      "Mode": "Reused"
+    },
+    "ProductInfo": "/usr/data/ProductInfo",
+    "ProductTest": {
+      "HardwareInfo": {
+        "Support": true
+      }
+    },
+    "PtzAction": [
+      "Preset",
+      "Tour"
+    ],
+    "PtzAutoMovement": {
+      "Action": [
+        "Preset",
+        "Tour"
+      ],
+      "Support": false,
+      "SupportSnapShot": false,
+      "TaskNum": 8
+    },
+    "PtzMotionRange": {
+      "HorizontalAngle": [
+        0,
+        355
+      ],
+      "VerticalAngle": [
+        -14,
+        90
+      ]
+    },
+    "PtzResetMulti": [
+      {
+        "Support": true
+      }
+    ],
+    "PwdUpdatePeriod": {
+      "CustomRange": [
+        1,
+        180
+      ],
+      "PeriodList": [
+        0,
+        180,
+        30,
+        60,
+        90
+      ],
+      "SupportPwdUpdatePeriod": true
+    },
+    "QRcodeDevInfo": 1,
+    "QueryDatabase": {
+      "Support": true
+    },
+    "RTSVCaps": {
+      "SupportDownload": true,
+      "SupportDownloadByTime": true,
+      "SupportMultiFile": true
+    },
+    "RemoteStoreList": [
+      "FTP"
+    ],
+    "ReservedConfigs": [
+      "Network",
+      "IPv6",
+      "Multicast",
+      "Web",
+      "Https",
+      "DVRIP",
+      "VideoStandard",
+      "VSP_GAYS",
+      "Telnet",
+      "WLan",
+      "AccessPoint",
+      "CellularEventPushList",
+      "__CellularEventPushConfig__"
+    ],
+    "ResetPwd": {
+      "Entry": "B",
+      "PubVer": "17031000",
+      "Support": true,
+      "Version": 1
+    },
+    "RestoreExceptConfigList": {
+      "RestoreExceptConfig": [
+        "Network",
+        "IPv6",
+        "Multicast",
+        "Web",
+        "Https",
+        "DVRIP",
+        "VideoStandard",
+        "VSP_GAYS",
+        "AccessPoint",
+        "Telnet",
+        "WLan",
+        "LoginRestriction",
+        "RTMP",
+        "CellularEventPushList",
+        "__CellularEventPushConfig__"
+      ]
+    },
+    "RotateResolutionLimit": [],
+    "SSHD": {
+      "Support": true
+    },
+    "SafetyAbnormalAbility": {
+      "Type": [
+        "ExceptionProgramRun",
+        "URLErrorOverLimit",
+        "NotAllowedTimeLogin",
+        "SessionNumOverLimit",
+        "SessionIDErrorOverLimit"
+      ]
+    },
+    "SeniorLedEventMap": [
+      {
+        "Enable": true,
+        "EventName": "READY",
+        "LedColor": 65280,
+        "Status": {
+          "LedBlink": {
+            "BlinkTimePeriod": 1000,
+            "LedBreatheAble": 1
+          }
+        },
+        "StatusCode": 2,
+        "describe": "启动时绿灯慢闪"
+      },
+      {
+        "Enable": true,
+        "EventName": "NET_ON_PAAS_OFF",
+        "LedColor": 65280,
+        "Status": {
+          "LedBlink": {
+            "BlinkTimePeriod": 1000,
+            "LedBreatheAble": 1
+          }
+        },
+        "StatusCode": 2,
+        "describe": "paas不在线时绿灯[亮10s-闪2s]"
+      },
+      {
+        "Enable": true,
+        "EventName": "REGISTED",
+        "LedColor": 65280,
+        "Status": {
+          "LedOPenClose": {
+            "BreatheTimePeriod": 1000
+          }
+        },
+        "StatusCode": 0
+      },
+      {
+        "Enable": true,
+        "EventName": "WIRED_CONNECTED",
+        "LedColor": 65280,
+        "Status": {
+          "LedOPenClose": {
+            "BreatheTimePeriod": 1000
+          }
+        },
+        "StatusCode": 0,
+        "describe": "有线网络接入事件，绿灯常亮"
+      },
+      {
+        "Enable": true,
+        "EventName": "WIRELESS_AP_CONNECTING",
+        "LedColor": 65280,
+        "Status": {
+          "LedBlink": {
+            "BlinkTimePeriod": 2000,
+            "LedBreatheAble": 1
+          }
+        },
+        "StatusCode": 2,
+        "describe": "无线网络软AP模式-开启事件，绿灯慢闪"
+      },
+      {
+        "Enable": true,
+        "EventName": "WlANWORKMODE",
+        "LedColor": 65280,
+        "Status": {
+          "LedBlink": {
+            "BlinkTimePeriod": 2000,
+            "LedBreatheAble": 1
+          }
+        },
+        "StatusCode": 2,
+        "describe": "开软AP，绿灯慢闪"
+      },
+      {
+        "Enable": true,
+        "EventName": "WIRELESS_STA_CONNECTING",
+        "LedColor": 65280,
+        "Status": {
+          "LedBlink": {
+            "BlinkTimePeriod": 200,
+            "LedBreatheAble": 1
+          }
+        },
+        "StatusCode": 2,
+        "describe": "无线网络STA模式-连接中，绿灯快闪"
+      },
+      {
+        "Enable": true,
+        "EventName": "WIRELESS_STA_CONNECTED",
+        "LedColor": 65280,
+        "Status": {
+          "LedOPenClose": {
+            "BreatheTimePeriod": 1000
+          }
+        },
+        "StatusCode": 0,
+        "describe": "无线网络STA模式-连接成功，绿灯常亮"
+      },
+      {
+        "Enable": true,
+        "EventName": "WIRELESS_STA_CONNECTFAIL",
+        "LedColor": 16711680,
+        "Status": {
+          "LedBlink": {
+            "BlinkTimePeriod": 2000,
+            "LedBreatheAble": 1
+          }
+        },
+        "StatusCode": 2,
+        "describe": "无线网络STA模式-连接失败，红灯慢闪"
+      },
+      {
+        "Enable": true,
+        "EventName": "UPGRADE",
+        "LedColor": 16776960,
+        "Status": {
+          "LedTurn": {
+            "TurnTimePeriod": 1000
+          }
+        },
+        "StatusCode": 4
+      },
+      {
+        "Enable": false,
+        "EventName": "MIDDLE_STATUS",
+        "LedColor": 65280,
+        "Status": {
+          "LedRorate": {
+            "LedRorateMode": 0,
+            "RorateTimePeriod": 1500
+          }
+        },
+        "StatusCode": 3
+      },
+      {
+        "Enable": true,
+        "EventName": "WORKING",
+        "LedColor": 16711680,
+        "Status": {
+          "LedOPenClose": {
+            "BreatheTimePeriod": 1000
+          }
+        },
+        "StatusCode": 0
+      },
+      {
+        "Enable": true,
+        "EventName": "RESET",
+        "LedColor": 16711680,
+        "Status": {
+          "LedOPenClose": {
+            "BreatheTimePeriod": 1000
+          }
+        },
+        "StatusCode": 0
+      },
+      {
+        "Enable": true,
+        "EventName": "NUM",
+        "LedColor": 16711680,
+        "Status": {
+          "LedOPenClose": {
+            "BreatheTimePeriod": 1000
+          }
+        },
+        "StatusCode": 1
+      }
+    ],
+    "ShowWarmLight": true,
+    "SmartEncodeChangeNeedReboot": true,
+    "SmartEncodeConflict": [
+      [
+        "SmartEnc",
+        "SetGOP"
+      ],
+      [
+        "SmartEnc",
+        "ROI"
+      ],
+      [
+        "SmartEnc",
+        "SVC"
+      ],
+      [
+        "SmartEnc",
+        "Extra2"
+      ],
+      [
+        "SmartEnc",
+        "MJPEG"
+      ],
+      [
+        "SmartEnc",
+        "DSP"
+      ],
+      [
+        "SmartEnc",
+        "Rotate_90"
+      ]
+    ],
+    "SmartMotionTrack": {
+      "Support": true
+    },
+    "SmartTrackAttribute": {
+      "CameraAOB": 74,
+      "CameraBOC": 41,
+      "CoordinateH": 256,
+      "CoordinateV": 128
+    },
+    "StdLogCollection": {
+      "Support": true
+    },
+    "StreamTransmitChannels": 20,
+    "SuggestDecode": [],
+    "SuggestEncode": [
+      {
+        "Video": [
+          {
+            "BitRate": 2048,
+            "Compression": "H.265",
+            "CustomResolutionName": "2880x1620",
+            "FPS": 15
+          },
+          {
+            "BitRate": 3072,
+            "Compression": "H.264",
+            "CustomResolutionName": "2880x1620",
+            "FPS": 15
+          },
+          {
+            "BitRate": 1536,
+            "Compression": "H.265",
+            "CustomResolutionName": "2304x1296",
+            "FPS": 15
+          },
+          {
+            "BitRate": 1536,
+            "Compression": "H.264",
+            "CustomResolutionName": "2304x1296",
+            "FPS": 15
+          },
+          {
+            "BitRate": 1024,
+            "Compression": "H.265",
+            "CustomResolutionName": "1080P",
+            "FPS": 15
+          },
+          {
+            "BitRate": 1536,
+            "Compression": "H.264",
+            "CustomResolutionName": "1080P",
+            "FPS": 15
+          },
+          {
+            "BitRate": 1024,
+            "Compression": "H.265",
+            "CustomResolutionName": "720P",
+            "FPS": 15
+          },
+          {
+            "BitRate": 1536,
+            "Compression": "H.264",
+            "CustomResolutionName": "720P",
+            "FPS": 15
+          },
+          {
+            "BitRate": 512,
+            "Compression": "H.265",
+            "CustomResolutionName": "640x360",
+            "FPS": 15
+          },
+          {
+            "BitRate": 768,
+            "Compression": "H.264",
+            "CustomResolutionName": "640x360",
+            "FPS": 15
+          },
+          {
+            "BitRate": 512,
+            "Compression": "H.265",
+            "CustomResolutionName": "QVGA",
+            "FPS": 15
+          },
+          {
+            "BitRate": 768,
+            "Compression": "H.264",
+            "CustomResolutionName": "QVGA",
+            "FPS": 15
+          }
+        ]
+      }
+    ],
+    "SupportAuthenticationAlgorithm": {
+      "SupportMD5": true,
+      "SupportSHA256": true,
+      "SupportSM3": false
+    },
+    "SupportAutoCloudUpgrade": true,
+    "SupportBellAlarmSound": false,
+    "SupportCELLULARTOOL": false,
+    "SupportCGICfg": true,
+    "SupportCfgHttpRdHttps": true,
+    "SupportCloudEventFilter": false,
+    "SupportCloudUpgrade": true,
+    "SupportCustomFilePathToFtp": false,
+    "SupportCustomRing": true,
+    "SupportDSTConfig": true,
+    "SupportDebugInfoRedir": true,
+    "SupportDebugInfoRedirSD": true,
+    "SupportDebugLogToCloud": true,
+    "SupportDevInit": true,
+    "SupportDevalias": true,
+    "SupportDisableLinkage": true,
+    "SupportDisableLinkageTypes": [
+      "DisableEmailLinkage",
+      "DisableLightingLinkage",
+      "DisableVoiceLinkage"
+    ],
+    "SupportDiskCheck": {
+      "Support": true
+    },
+    "SupportEventHandlerParamAPI": true,
+    "SupportEventPushFilter": true,
+    "SupportExportEncrypedLog": true,
+    "SupportExtraClientInfo": {
+      "SupportClientFlag": true
+    },
+    "SupportFaultCheck": true,
+    "SupportFontAttributeOsd": false,
+    "SupportForceIFrameReduction": true,
+    "SupportFtpTest": true,
+    "SupportGenetecCfg": true,
+    "SupportGetChannelAlgVersion": true,
+    "SupportHDDHealthCheck": false,
+    "SupportHotspotSSIDRule": "V2",
+    "SupportInitVideoStandard": true,
+    "SupportLHTS0RTT": false,
+    "SupportLinkRing": false,
+    "SupportLoginAuthCtrl": true,
+    "SupportMediaEncrypt": true,
+    "SupportMobilePush": true,
+    "SupportOfflineToFTP": false,
+    "SupportOnvifCfg": true,
+    "SupportOrderFields": [
+      "RecNo",
+      "CreateTime"
+    ],
+    "SupportOsdRestructure": true,
+    "SupportPaaSTls": true,
+    "SupportPtzLimitNotify": true,
+    "SupportRefreshSessionID": true,
+    "SupportRestartPtz": true,
+    "SupportSafetyAbnormalAlarm": true,
+    "SupportSetPtzTour": {
+      "PtzTourMaxInterval": 3600,
+      "PtzTourMinInterval": 60
+    },
+    "SupportShowNvm": false,
+    "SupportSmartMotionSensitive": true,
+    "SupportStepMoveMulti": [
+      true
+    ],
+    "SupportTCMVersion": "V1",
+    "SupportTSV3": false,
+    "SupportTSVS": true,
+    "SupportTemporaryLogin": true,
+    "SupportUnpackVideoFind": true,
+    "SupportWIFITOOL": false,
+    "SupportWeakPwdVerify": true,
+    "SupportWirelessPair": [
+      "Bluetooth",
+      "ProbeReq"
+    ],
+    "SystemService": {
+      "Support": true
+    },
+    "UnifiedUTC": {
+      "SupportRealUtc": true,
+      "SupportlUtcDownLoad": true,
+      "SupportlUtcFind": true,
+      "SupportlUtcFullSpeedPlay": true,
+      "SupportlUtcMobileFind": true,
+      "SupportlUtcPlay": true
+    },
+    "UpdateCheckLanguage": true,
+    "UpdateCheckLanguageEx": {
+      "UpdateWithoutLanguageField": true,
+      "UpdateWithoutLicense": true
+    },
+    "UpgradeTip": {
+      "ShowTip": false
+    },
+    "VSPs": [
+      "None"
+    ],
+    "VideoInDayNight": {
+      "SupportSensitivityRange": 5
+    },
+    "VideoInMode": [
+      {
+        "SwitchByDayNight": true
+      }
+    ],
+    "VideoInWhiteBalance": {
+      "Modes": [
+        "Auto",
+        "Natural",
+        "StreetLamp",
+        "Outdoor",
+        "Manual",
+        "ManualDatum"
+      ],
+      "Support": true
+    },
+    "VolumeDetect": true,
+    "VolumeValue": 100,
+    "WLanAutoPair": "",
+    "Zoom": false,
+    "webSpec": "IPC2.420",
+    "webSubVer": "0",
+    "BuildDate": "2026-05-30",
+    "BuildDateTime": "2026-05-30 00:16:09",
+    "HardwareSecurityVersionMajor": "1",
+    "HardwareSecurityVersionMinor": "1",
+    "IsGeneralRecord": true,
+    "IsLocalStore": true,
+    "IsLocalurgentStore": false,
+    "IsRemoteStore": false,
+    "MajorVersion": 2,
+    "MaxExtraStream": 1,
+    "MaxGroup": 8,
+    "MaxUsers": 20,
+    "MinorVersion": 860,
+    "OEMVersion": "0000000",
+    "Revision": 26,
+    "SecurityBaselineVersion": "V2.4",
+    "ShowLogo": false,
+    "TypeVersion": "R",
+    "VSP": "None",
+    "Vendor": "Dahua",
+    "VendorAbbr": "",
+    "WebVersion": "3.2.1.2462838",
+    "AllLanguages": [
+      "English",
+      "SimpChinese",
+      "TradChinese",
+      "Italian",
+      "Spanish",
+      "Japanese",
+      "Russian",
+      "French",
+      "German",
+      "Portugal",
+      "Turkey",
+      "Poland",
+      "Romanian",
+      "Hungarian",
+      "Finnish",
+      "Estonian",
+      "Korean",
+      "Farsi",
+      "Dansk",
+      "Czechish",
+      "Bulgaria",
+      "Slovakian",
+      "Slovenia",
+      "Croatian",
+      "Dutch",
+      "Greek",
+      "Ukrainian",
+      "Swedish",
+      "Serbian",
+      "Vietnamese",
+      "Lithuanian",
+      "Filipino",
+      "Arabic",
+      "Catalan",
+      "Latvian",
+      "SpanishEU",
+      "Hebrew",
+      "Thai",
+      "Indonesian"
+    ],
+    "DefaultLanguage": "English",
+    "DefaultVideoStandard": "PAL",
+    "DevStringFiles": [
+      "StringsEn.txt",
+      "StringsSp.txt",
+      "StringsRu.txt"
+    ],
+    "HTMLStringFiles": [
+      "webEN.json",
+      "webES.json",
+      "webRU.json"
+    ],
+    "Languages": [
+      "English",
+      "Spanish",
+      "Russian"
+    ],
+    "VideoStandards": [
+      "PAL",
+      "NTSC"
+    ],
+    "WebStringFiles": [
+      "webEN.lang",
+      "webES.lang",
+      "webRU.lang"
+    ],
+    "DeviceTypeTransform": {
+      "General": {
+        "Default": "IPC"
+      }
+    },
+    "Device": "IPC-H5A",
+    "VideoInputChannels": 1,
+    "AudioInputChannels": 1,
+    "AudioOutputChannels": 1
+  },
+  "coaxial_io_caps": {
+    "SupportControlLight": 0,
+    "SupportControlFullcolorLight": 0,
+    "SupportControlSpeaker": 1
+  },
+  "speak_caps": {
+    "SupportAudioPlay": true,
+    "SupportQuickReply": false,
+    "SupportSiren": true,
+    "SupportedAudioFormat": [
+      {
+        "Format": "aac"
+      },
+      {
+        "Format": "mp3"
+      },
+      {
+        "Format": "wav"
+      }
+    ],
+    "AudioPlayPath": [
+      {
+        "Tag": "Normal",
+        "Path": "/usr/data/audiofiles/siren/",
+        "SupportUpload": false
+      },
+      {
+        "Path": "/dev/mtd9/",
+        "SupportUpload": true,
+        "Tag": "Normal"
+      }
+    ],
+    "MaxUploadFileSize": 100,
+    "MaxUploadFileTime": 20,
+    "MaxRecordFileTime": 20
+  },
+  "supported_events": {
+    "DevEventList": [
+      {
+        "DevID": "",
+        "Info": [
+          {
+            "EventSnapPushType": "EventOnly",
+            "EventCode": "StorageFailure",
+            "EventType": "Device"
+          },
+          {
+            "EventSnapPushType": "EventOnly",
+            "EventCode": "StorageNotExist",
+            "EventType": "Device"
+          },
+          {
+            "EventSnapPushType": "EventOnly",
+            "EventCode": "StorageLowSpace",
+            "EventType": "Device"
+          },
+          {
+            "EventSnapPushType": "EventOnly",
+            "EventCode": "NetAbort",
+            "EventType": "Device"
+          },
+          {
+            "EventSnapPushType": "EventOnly",
+            "EventCode": "IPConflict",
+            "EventType": "Device"
+          },
+          {
+            "EventSnapPushType": "EventOnly",
+            "EventCode": "AudioMutation",
+            "EventType": "Device"
+          }
+        ]
+      }
+    ],
+    "ChannelEventList": [
+      {
+        "Channel": 0,
+        "Info": [
+          {
+            "EventSnapPushType": "EventOnly",
+            "EventCode": "VideoMotion",
+            "EventType": "Channel"
+          },
+          {
+            "EventSnapPushType": "SnapOnly",
+            "EventCode": "SmartMotionHuman",
+            "EventType": "Channel"
+          },
+          {
+            "EventSnapPushType": "EventOnly",
+            "EventCode": "VideoBlind",
+            "EventType": "Channel"
+          },
+          {
+            "EventSnapPushType": "SnapOnly",
+            "EventCode": "SmartMotionAnimal",
+            "EventType": "Channel"
+          }
+        ]
+      }
+    ]
+  },
+  "config_table_names": [
+    "SmartEncode",
+    "VideoEncodeROI",
+    "VideoWaterMark",
+    "General",
+    "Language",
+    "VideoOut",
+    "Locales",
+    "BlindDetect",
+    "MotionDetect",
+    "SmartMotionDetect",
+    "Encode",
+    "VideoWidget",
+    "ChannelTitle",
+    "PwdReset",
+    "PwdUpdatePolicy",
+    "AudioDetect",
+    "AccessFilter",
+    "Syslog",
+    "AudioInputVolume",
+    "AudioOutputVolume",
+    "AudioInDenoise",
+    "AudioInput",
+    "VideoStandard",
+    "VideoInMode",
+    "EncodeEncrypt",
+    "EncodeAuth",
+    "VideoColor",
+    "VideoImageControl",
+    "VideoInSharpness",
+    "VideoInExposure",
+    "VideoInDenoise",
+    "VideoInIRExposure",
+    "VideoInBacklight",
+    "VideoInWhiteBalance",
+    "VideoInDayNight",
+    "VideoInOptions",
+    "Lighting",
+    "Lighting_V2",
+    "VideoInAntiFillLightOverExposure",
+    "LightingScheme",
+    "DisableLinkage",
+    "DisableLinkageTimeSection",
+    "DisableVoiceLinkage",
+    "DisableLightingLinkage",
+    "DisableEmailLinkage",
+    "DisableAlarmOutLinkage",
+    "DisableEventNotify",
+    "MediaGlobal",
+    "LoginFailureAlarm",
+    "AutoMaintain",
+    "VSP_PaaS",
+    "VSP_PaaS_Event_Rules",
+    "T2UServer",
+    "Telnet",
+    "VideoInPreviewOptions",
+    "FlashPartitions",
+    "RecordStoragePoint",
+    "Record",
+    "Snap",
+    "Holiday",
+    "RecordMode",
+    "SnapMode",
+    "StorageGroup",
+    "NAS",
+    "StorageGlobal",
+    "StorageFailure",
+    "StorageLowSpace",
+    "StorageNotExist",
+    "StorageHealthAlarm",
+    "MediaEncrypt",
+    "UnFocusDetect",
+    "VSP_GENETEC",
+    "LightGlobal",
+    "LeTimedCruise",
+    "LeCruisePlan",
+    "PtzTour",
+    "PtzMovement",
+    "PtzPreset",
+    "IdleMotion",
+    "PtzAutoMovement",
+    "PowerUp",
+    "LeCollectionPoint",
+    "PtzSpeed",
+    "AutoPattern",
+    "_DHCloudUpgrade_",
+    "SSHD",
+    "__DHCloudPushList__",
+    "SafetyAbnormalAlarm",
+    "Alarm",
+    "AlarmOut",
+    "DebugInfoRedir",
+    "LoginAuthCtrl",
+    "VSP_EnterpriseSaaS",
+    "NetAutoAdaptEncode",
+    "LoginRestriction",
+    "Sound",
+    "DigestAlgorithm",
+    "OnvifDigestAlgorithm",
+    "CellularEventPushList",
+    "__CellularEventPushConfig__",
+    "_DHCloudUpgradeRecord_",
+    "Https",
+    "AELensMask",
+    "Network",
+    "EncodeAdapt",
+    "AccessPoint",
+    "RouteTableIPv4",
+    "RouteTableIPv6",
+    "UserGlobal",
+    "NetAbort",
+    "NTP",
+    "_DHCloudUpgrade_",
+    "DDNS",
+    "IPv6",
+    "RTSP",
+    "WLan",
+    "NetAccessPriorityIPv6",
+    "VSP_ONVIF",
+    "LLDPGlobal",
+    "ARP&Ping",
+    "NetAccessPriority",
+    "DVRIP",
+    "Multicast",
+    "SSLProtocols",
+    "DeviceDiscovery",
+    "IPConflict"
+  ],
+  "rpc_component_methods": {
+    "global": [
+      "global.getCurrentTime",
+      "global.setCurrentTime",
+      "global.logout",
+      "global.setCurrentUTC",
+      "global.listMethod"
+    ],
+    "magicBox": [
+      "magicBox.factory.instance",
+      "magicBox.destroy",
+      "magicBox.getProductDefinition",
+      "magicBox.getSoftwareVersion",
+      "magicBox.getHardwareVersion",
+      "magicBox.getDeviceClass",
+      "magicBox.getDeviceType",
+      "magicBox.getSerialNo",
+      "magicBox.reboot",
+      "magicBox.getSystemInfoNew",
+      "magicBox.getProcessInfo",
+      "magicBox.resetSystem",
+      "magicBox.getOSInfo",
+      "magicBox.getVendor",
+      "magicBox.getMarketArea",
+      "magicBox.getTracingCode",
+      "magicBox.setTracingCode",
+      "magicBox.getBootParameter",
+      "magicBox.shutdown",
+      "magicBox.resetSystemEx",
+      "magicBox.getWorkModeCaps",
+      "magicBox.getSubModules",
+      "magicBox.getWebServiceCaps",
+      "magicBox.getSidInfo",
+      "magicBox.getCaps",
+      "magicBox.listMethod"
+    ],
+    "configManager": [
+      "configManager.factory.instance",
+      "configManager.destroy",
+      "configManager.getConfig",
+      "configManager.setConfig",
+      "configManager.getDefault",
+      "configManager.secGetDefault",
+      "configManager.restore",
+      "configManager.restoreExcept",
+      "configManager.deleteConfig",
+      "configManager.setTemporaryConfig",
+      "configManager.restoreTemporaryConfig",
+      "configManager.exportPackConfig",
+      "configManager.importPackConfig",
+      "configManager.getMemberNames",
+      "configManager.listMethod"
+    ],
+    "ptz": [
+      "ptz.factory.instance",
+      "ptz.destroy",
+      "ptz.start",
+      "ptz.stop",
+      "ptz.getCurrentProtocolCaps",
+      "ptz.moveAbsolutely",
+      "ptz.moveContinuously",
+      "ptz.gotoPreset",
+      "ptz.setPreset",
+      "ptz.setPresetName",
+      "ptz.removePreset",
+      "ptz.getPresets",
+      "ptz.restartPtz",
+      "ptz.reset",
+      "ptz.selfCheckReset",
+      "ptz.moveDirectly",
+      "ptz.lensInit",
+      "ptz.stopMove",
+      "ptz.getStatus",
+      "ptz.isMoving",
+      "ptz.startPatternRecord",
+      "ptz.stopPatternRecord",
+      "ptz.startPatternReplay",
+      "ptz.stopPatternReplay",
+      "ptz.startTour",
+      "ptz.stopTour",
+      "ptz.addTourPoint",
+      "ptz.removeTourPoint",
+      "ptz.getTourPoints",
+      "ptz.setTour",
+      "ptz.removeTour",
+      "ptz.focusRegion",
+      "ptz.getTours",
+      "ptz.moveRelatively",
+      "ptz.getStartupStatus",
+      "ptz.listMethod"
+    ],
+    "eventManager": [
+      "eventManager.factory.instance",
+      "eventManager.destroy",
+      "eventManager.attach",
+      "eventManager.detach",
+      "eventManager.notify",
+      "eventManager.getEventData",
+      "eventManager.getCaps",
+      "eventManager.getEventLink",
+      "eventManager.confirmEvent",
+      "eventManager.confirmEventByPassword",
+      "eventManager.receipt",
+      "eventManager.getEventMask",
+      "eventManager.getEventIndexes",
+      "eventManager.setEventHandlerParam",
+      "eventManager.getEventHandlerParam",
+      "eventManager.getSupportEventDetailList",
+      "eventManager.listMethod"
+    ],
+    "alarm": [
+      "alarm.factory.instance",
+      "alarm.destroy",
+      "alarm.getAlarmCaps",
+      "alarm.getInState",
+      "alarm.getOutState",
+      "alarm.getInSlots",
+      "alarm.getOutSlots",
+      "alarm.getAllInSlots",
+      "alarm.getAllOutSlots",
+      "alarm.listMethod"
+    ],
+    "devVideoInput": [
+      "devVideoInput.factory.instance",
+      "devVideoInput.destroy",
+      "devVideoInput.factory.getCollect",
+      "devVideoInput.getCapsEx",
+      "devVideoInput.getCaps",
+      "devVideoInput.getVideoInStatus",
+      "devVideoInput.getVideoInAppStaticStatus",
+      "devVideoInput.getFocusStatus",
+      "devVideoInput.stopAutoFocus",
+      "devVideoInput.adjustFocus",
+      "devVideoInput.autoFocus",
+      "devVideoInput.forceInfraredLight",
+      "devVideoInput.adjustFocusContinuously",
+      "devVideoInput.focusRegion",
+      "devVideoInput.getVideoInBacklightMode",
+      "devVideoInput.setVideoInBacklightMode",
+      "devVideoInput.getLightStatus",
+      "devVideoInput.listMethod"
+    ],
+    "devAudioInput": [
+      "devAudioInput.factory.getCollect",
+      "devAudioInput.factory.instance",
+      "devAudioInput.destroy",
+      "devAudioInput.getCaps",
+      "devAudioInput.closeCapAlg",
+      "devAudioInput.listMethod"
+    ],
+    "devAudioOutput": [
+      "devAudioOutput.factory.getCollect",
+      "devAudioOutput.closePlayAlg",
+      "devAudioOutput.listMethod"
+    ],
+    "speak": [
+      "speak.factory.instance",
+      "speak.getCaps",
+      "speak.startPlay",
+      "speak.getStatus",
+      "speak.listMethod"
+    ],
+    "storage": [
+      "storage.factory.instance",
+      "storage.destroy",
+      "storage.getDeviceAllInfo",
+      "storage.getDirectoryPaths",
+      "storage.getCaps",
+      "storage.getDeviceNames",
+      "storage.listMethod"
+    ],
+    "userManager": [
+      "userManager.factory.instance",
+      "userManager.destroy",
+      "userManager.getCaps",
+      "userManager.getAuthorityList",
+      "userManager.getUserNum",
+      "userManager.getUserInfo",
+      "userManager.getUserInfoAll",
+      "userManager.getGroupInfo",
+      "userManager.getGroupInfoAll",
+      "userManager.getActiveUserInfoAll",
+      "userManager.setCurrentClientInfo",
+      "userManager.getTemporaryToken",
+      "userManager.addGroup",
+      "userManager.deleteGroup",
+      "userManager.modifyGroup",
+      "userManager.addUser",
+      "userManager.deleteUser",
+      "userManager.modifyUser",
+      "userManager.modifyPassword",
+      "userManager.getUserInfoByPage",
+      "userManager.modifyPasswordByManager",
+      "userManager.getBindSVDescript",
+      "userManager.listMethod"
+    ],
+    "netApp": [
+      "netApp.factory.instance",
+      "netApp.destroy",
+      "netApp.getNetInterfaces",
+      "netApp.getDefaultEthInfo",
+      "netApp.sendTestMail",
+      "netApp.getDevApInfo",
+      "netApp.getCaps",
+      "netApp.scanWLanDevices",
+      "netApp.adjustTimeWithNTP",
+      "netApp.listMethod"
+    ],
+    "CoaxialControlIO": [
+      "CoaxialControlIO.getCaps",
+      "CoaxialControlIO.control",
+      "CoaxialControlIO.getStatus",
+      "CoaxialControlIO.listMethod"
+    ],
+    "mediaFileFind": [
+      "mediaFileFind.factory.create",
+      "mediaFileFind.findFile",
+      "mediaFileFind.findNextFile",
+      "mediaFileFind.close",
+      "mediaFileFind.destroy",
+      "mediaFileFind.listMethod"
+    ],
+    "ptz (instance)": [
+      "ptz.factory.instance",
+      "ptz.destroy",
+      "ptz.start",
+      "ptz.stop",
+      "ptz.getCurrentProtocolCaps",
+      "ptz.moveAbsolutely",
+      "ptz.moveContinuously",
+      "ptz.gotoPreset",
+      "ptz.setPreset",
+      "ptz.setPresetName",
+      "ptz.removePreset",
+      "ptz.getPresets",
+      "ptz.restartPtz",
+      "ptz.reset",
+      "ptz.selfCheckReset",
+      "ptz.moveDirectly",
+      "ptz.lensInit",
+      "ptz.stopMove",
+      "ptz.getStatus",
+      "ptz.isMoving",
+      "ptz.startPatternRecord",
+      "ptz.stopPatternRecord",
+      "ptz.startPatternReplay",
+      "ptz.stopPatternReplay",
+      "ptz.startTour",
+      "ptz.stopTour",
+      "ptz.addTourPoint",
+      "ptz.removeTourPoint",
+      "ptz.getTourPoints",
+      "ptz.setTour",
+      "ptz.removeTour",
+      "ptz.focusRegion",
+      "ptz.getTours",
+      "ptz.moveRelatively",
+      "ptz.getStartupStatus",
+      "ptz.listMethod"
+    ],
+    "speak (instance)": [
+      "speak.factory.instance",
+      "speak.getCaps",
+      "speak.startPlay",
+      "speak.getStatus",
+      "speak.listMethod"
+    ]
+  }
+}

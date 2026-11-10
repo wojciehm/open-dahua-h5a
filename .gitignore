@@ -1,0 +1,74 @@
+# ==============================================================================
+# Standard Homelab .gitignore Template
+# ==============================================================================
+
+# --- System & IDE ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+dist/
+build/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.venv/
+venv/
+
+# --- Build & Logs ---
+*.log
+logs/
+tmp/
+.cache/
+/public
+
+# --- Archives ---
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# --- Security & Secrets (SOPS Setup) ---
+# Ignoruj wszystkie pliki env, chyba ze zaszyfrowane przez SOPS (!*.enc.env)
+*.env
+*.env.*
+*.env-*
+*.env-bck
+!*.enc.env
+*.bak
+*.retry
+
+# --- Application Specific Secrets ---
+acme.json
+*.ovpn
+*.key
+*.pem
+*.password
+google-key.json
+*bot_token*
+*.token
+*_credentials.yaml
+.vault_pass
+
+# --- Databases & Large Binaries ---
+*.db
+*.sqlite*
+**/db/
+*.mmdb
+GeoLite2/
+
+# --- Tools Cache ---
+.cache_ggshield

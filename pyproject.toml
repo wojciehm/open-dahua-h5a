@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aio-dahua-h5a"
+version = "0.1.0"
+description = "Clean-room async Python library and CLI for local control of Dahua H5A 5MP 360° Wi-Fi 6 indoor cameras over Port 37777 (NetSDK DVR2 + JSON-RPC)"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+authors = [
+    { name = "Wojciech Marusiak" }
+]
+keywords = ["dahua", "h5a", "ip-camera", "netsdk", "ptz", "home-assistant", "asyncio"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Home Automation",
+    "Topic :: Multimedia :: Video",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pytest-asyncio>=0.23",
+]
+
+[project.scripts]
+dahua-h5a = "aio_dahua_h5a.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["aio_dahua_h5a*"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+testpaths = ["tests"]

@@ -4,7 +4,9 @@ from __future__ import annotations
 
 import asyncio
 from collections.abc import Callable
+import json
 from pathlib import Path
+import struct
 from typing import Any
 from urllib.parse import quote
 
@@ -326,7 +328,16 @@ class DahuaH5AClient:
         return False
 
     async def set_status_led(self, enabled: bool) -> bool:
-        """Turn the front status indicator LED on (`True`) or off (`False`)."""
+        """Turn the front status indicator LED on (`True`) or off (`False`).
+
+        Note: On DH-H5A firmware `2.860.0000000.26.R`, calling
+        `configManager.setConfig("LightGlobal", ...)` overwrites an internal
+        byte in the 16-byte `LightGlobal` flash block at offset `0x23760`
+        (`145248`), which permanently keeps the green LED off even when
+        `Enable=True`. The status LED entity is therefore disabled by default,
+        and factory `LightGlobal` flash state (`4d85760d2339312ec949ed08e6d75ec7`)
+        can be restored via `import_pack_config`.
+        """
         table = await self.get_config("LightGlobal")
         if not isinstance(table, list) or not table:
             table = [{"Enable": bool(enabled)}]
@@ -933,4 +944,86 @@ class DahuaH5AClient:
     async def reboot(self) -> bool:
         """Reboot the camera via `magicBox.reboot`."""
         resp = await self.rpc("magicBox.reboot", None, raise_on_error=True)
+        return bool(resp.get("result"))
+
+    # -------------------------------------------------------------------------
+    # 13. Binary Flash Configuration Pack (`exportPackConfig` / `importPackConfig`)
+    # -------------------------------------------------------------------------
+
+    async def export_pack_config(self) -> bytes:
+        """Export the 146,240-byte binary flash configuration archive (`configManager.exportPackConfig`)."""
+        chunks: list[bytes] = []
+        orig_handler = self.protocol._handle_complete_json_frame
+
+        def _capture_frame(req_id: int, body: bytes) -> None:
+            chunks.append(body)
+            orig_handler(req_id, body)
+
+        self.protocol._handle_complete_json_frame = _capture_frame
+        try:
+            resp = await self.rpc("configManager.exportPackConfig", {})
+            expected_len = int(
+                ((resp.get("params") or {}).get("length")) or 146240
+            )
+            await asyncio.sleep(0.6)
+        finally:
+            self.protocol._handle_complete_json_frame = orig_handler
+
+        raw = b"".join(chunks)
+        if raw.startswith(b"{"):
+            json_end = raw.find(b"}\n")
+            if json_end != -1:
+                pack_start = json_end + 2
+                while pack_start < len(raw) and raw[pack_start] == 0x00:
+                    pack_start += 1
+                raw = raw[pack_start:]
+        return raw[:expected_len]
+
+    async def import_pack_config(self, pack_bytes: bytes) -> bool:
+        """Import a binary flash configuration archive via `configManager.importPackConfig`.
+
+        Uses the multi-chunk `0xf6` framing reconstructed from `sendJsonPacket_dvr2`
+        in `libdhnetsdk.so` (up to `0x7fe0` bytes per frame with `hdr[16:20]` set to
+        `len(json_bytes)` and `hdr[20:24]` set to `len(pack_bytes)`).
+        """
+        p = self.protocol
+        if p._writer is None:
+            raise DahuaH5AError("Protocol client is not connected")
+        p._seq_id += 1
+        req_id = p._seq_id << 8
+        payload_dict = {
+            "method": "configManager.importPackConfig",
+            "params": {"length": len(pack_bytes)},
+            "id": req_id,
+            "session": p._session_id,
+        }
+        json_bytes = (
+            json.dumps(payload_dict, separators=(",", ":")).encode("utf-8")
+            + b"\n\x00"
+        )
+        stream = json_bytes + pack_bytes
+        max_chunk = 0x7FE0
+        fut: asyncio.Future[dict[str, Any]] = (
+            asyncio.get_running_loop().create_future()
+        )
+        p._pending[req_id] = fut
+
+        async with p._write_lock:
+            chunk_idx = 0
+            for off in range(0, len(stream), max_chunk):
+                chunk = stream[off : off + max_chunk]
+                hdr = bytearray(32)
+                hdr[0] = 0xF6
+                hdr[4:8] = struct.pack("<I", len(chunk))
+                hdr[8:12] = struct.pack("<I", req_id)
+                hdr[14] = 0
+                hdr[15] = chunk_idx
+                hdr[16:20] = struct.pack("<I", len(json_bytes))
+                hdr[20:24] = struct.pack("<I", len(pack_bytes))
+                hdr[24:28] = struct.pack("<I", p._session_id)
+                p._writer.write(bytes(hdr) + chunk)
+                await p._writer.drain()
+                chunk_idx += 1
+
+        resp = await asyncio.wait_for(fut, timeout=15.0)
         return bool(resp.get("result"))

@@ -80,6 +80,7 @@ SWITCH_DESCRIPTIONS: tuple[DahuaH5ASwitchDescription, ...] = (
         translation_key="status_led",
         icon="mdi:led-on",
         entity_category=EntityCategory.CONFIG,
+        entity_registry_enabled_default=False,
         value_fn=lambda s: s.status_led,
         turn_on_fn=lambda c: c.set_status_led(True),
         turn_off_fn=lambda c: c.set_status_led(False),

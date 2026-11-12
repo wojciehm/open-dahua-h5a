@@ -142,6 +142,30 @@ asyncio.run(main())
 
 ---
 
+## Supported Languages & Community Translations
+
+The Home Assistant integration includes native UI translations (`custom_components/dahua_h5a/translations/`) for **12 languages**:
+
+- 🇬🇧 English (`en.json`)
+- 🇵🇱 Polski (`pl.json`)
+- 🇩🇪 Deutsch (`de.json`)
+- 🇪🇸 Español (`es.json`)
+- 🇫🇷 Français (`fr.json`)
+- 🇮🇹 Italiano (`it.json`)
+- 🇳🇱 Nederlands (`nl.json`)
+- 🇵🇹 Português (`pt.json`)
+- 🇨🇿 Čeština (`cs.json`)
+- 🇺🇦 Українська (`uk.json`)
+- 🇯🇵 日本語 (`ja.json`)
+- 🇨🇳 简体中文 (`zh-Hans.json`)
+
+### Contributing a New Translation
+1. Copy `custom_components/dahua_h5a/translations/en.json` to `custom_components/dahua_h5a/translations/<lang>.json` (using a standard BCP-47 / ISO 639-1 language code supported by Home Assistant).
+2. Translate the string values while keeping all JSON keys identical to `strings.json`.
+3. Run `.venv/bin/pytest -v` to verify key parity across all translation files and open a Pull Request.
+
+---
+
 ## Running Tests
 
 ```bash

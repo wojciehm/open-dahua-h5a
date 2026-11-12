@@ -1,0 +1,166 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Dahua H5A / Hero カメラを追加",
+        "description": "ネイティブ NetSDK TCP ポート (37777) と RTSP ポート (554) を介して Dahua H5A / Hero シリーズカメラにローカル接続します。複数のカメラを追加でき、各カメラはハードウェアのシリアル番号で識別されます。",
+        "data": {
+          "host": "カメラの IP アドレス / ホスト名",
+          "port": "NetSDK TCP ポート",
+          "rtsp_port": "RTSP ポート",
+          "username": "ユーザー名",
+          "password": "パスワード"
+        }
+      },
+      "reconfigure": {
+        "title": "Dahua H5A カメラの再設定",
+        "description": "このカメラの IP アドレス、ポート、または認証情報を更新します。",
+        "data": {
+          "host": "カメラの IP アドレス / ホスト名",
+          "port": "NetSDK TCP ポート",
+          "rtsp_port": "RTSP ポート",
+          "username": "ユーザー名",
+          "password": "パスワード"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "TCP ポート 37777 でカメラに接続できませんでした",
+      "invalid_auth": "ユーザー名またはパスワードが無効です (DVR2 0xa0 認証失敗)",
+      "unknown": "予期しないエラーが発生しました"
+    },
+    "abort": {
+      "already_configured": "このカメラは既に設定されています",
+      "reconfigure_successful": "カメラの設定が正常に更新されました"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Dahua H5A オプション",
+        "data": {
+          "scan_interval": "状態ポーリング間隔 (秒)",
+          "stream_subtype": "RTSP ビデオストリームプロファイル"
+        }
+      }
+    }
+  },
+  "entity": {
+    "camera": {
+      "camera": {
+        "name": "ライブストリーム"
+      }
+    },
+    "switch": {
+      "privacy_mode": {
+        "name": "プライバシーマスク (レンズを隠す)"
+      },
+      "human_detection": {
+        "name": "AI 人物検知"
+      },
+      "pet_detection": {
+        "name": "AI ペット検知"
+      },
+      "smart_tracking": {
+        "name": "AI スマート自動追尾"
+      },
+      "motion_detection": {
+        "name": "動体検知"
+      },
+      "audio_detection": {
+        "name": "異常音 / 赤ちゃんの泣き声検知"
+      },
+      "status_led": {
+        "name": "ステータス LED"
+      },
+      "audio_encode": {
+        "name": "ストリーム音声録音"
+      },
+      "mirror": {
+        "name": "画像ミラー (左右反転)"
+      },
+      "flip": {
+        "name": "画像反転 (180° 天井設置)"
+      }
+    },
+    "select": {
+      "night_vision_mode": {
+        "name": "IR ナイトビジョンモード",
+        "state": {
+          "auto": "自動 (ICR)",
+          "off": "オフ (昼間のみ)",
+          "on": "オン (IR 夜間)"
+        }
+      },
+      "ptz_preset": {
+        "name": "PTZ プリセット"
+      }
+    },
+    "number": {
+      "speaker_volume": {
+        "name": "スピーカー音量"
+      },
+      "microphone_volume": {
+        "name": "マイク感度"
+      },
+      "audio_sensitivity": {
+        "name": "音声検知感度"
+      }
+    },
+    "button": {
+      "ptz_up": {
+        "name": "PTZ 上へ"
+      },
+      "ptz_down": {
+        "name": "PTZ 下へ"
+      },
+      "ptz_left": {
+        "name": "PTZ 左へ"
+      },
+      "ptz_right": {
+        "name": "PTZ 右へ"
+      },
+      "siren": {
+        "name": "サイレンを鳴らす"
+      },
+      "ptz_calibrate": {
+        "name": "PTZ キャリブレーション"
+      }
+    },
+    "binary_sensor": {
+      "motion": {
+        "name": "動き"
+      },
+      "human_detected": {
+        "name": "人物検知"
+      },
+      "sound_detected": {
+        "name": "音声 / 泣き声検知"
+      },
+      "privacy_active": {
+        "name": "プライバシーシャッター",
+        "state": {
+          "on": "閉",
+          "off": "開"
+        }
+      }
+    },
+    "sensor": {
+      "sd_status": {
+        "name": "MicroSD カード状態"
+      },
+      "sd_used_percent": {
+        "name": "MicroSD 使用率"
+      },
+      "sd_free_gb": {
+        "name": "MicroSD 空き容量"
+      },
+      "ptz_pan": {
+        "name": "PTZ パン角度 (Pan)"
+      },
+      "ptz_tilt": {
+        "name": "PTZ チルト角度 (Tilt)"
+      }
+    }
+  }
+}

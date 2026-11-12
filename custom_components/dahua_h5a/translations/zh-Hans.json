@@ -1,0 +1,166 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "添加大华 H5A / Hero 摄像机",
+        "description": "通过原生 NetSDK TCP 端口 (37777) 和 RTSP 端口 (554) 本地连接到大华 H5A / Hero 系列摄像机。您可以添加多台摄像机，每台摄像机通过硬件序列号进行识别。",
+        "data": {
+          "host": "摄像机 IP / 主机名",
+          "port": "NetSDK TCP 端口",
+          "rtsp_port": "RTSP 端口",
+          "username": "用户名",
+          "password": "密码"
+        }
+      },
+      "reconfigure": {
+        "title": "重新配置大华 H5A 摄像机",
+        "description": "更新此摄像机的 IP 地址、端口或凭据。",
+        "data": {
+          "host": "摄像机 IP / 主机名",
+          "port": "NetSDK TCP 端口",
+          "rtsp_port": "RTSP 端口",
+          "username": "用户名",
+          "password": "密码"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "无法在 TCP 端口 37777 上连接到摄像机",
+      "invalid_auth": "用户名或密码无效 (DVR2 0xa0 身份验证失败)",
+      "unknown": "发生意外错误"
+    },
+    "abort": {
+      "already_configured": "此摄像机已配置",
+      "reconfigure_successful": "摄像机配置已成功更新"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "大华 H5A 选项",
+        "data": {
+          "scan_interval": "状态轮询间隔 (秒)",
+          "stream_subtype": "RTSP 视频流配置文件"
+        }
+      }
+    }
+  },
+  "entity": {
+    "camera": {
+      "camera": {
+        "name": "实时视频流"
+      }
+    },
+    "switch": {
+      "privacy_mode": {
+        "name": "隐私遮蔽 (隐藏镜头)"
+      },
+      "human_detection": {
+        "name": "AI 人形检测"
+      },
+      "pet_detection": {
+        "name": "AI 宠物检测"
+      },
+      "smart_tracking": {
+        "name": "AI 智能自动跟踪"
+      },
+      "motion_detection": {
+        "name": "移动侦测"
+      },
+      "audio_detection": {
+        "name": "异常声音 / 婴儿哭声检测"
+      },
+      "status_led": {
+        "name": "状态指示灯 LED"
+      },
+      "audio_encode": {
+        "name": "视频流音频录制"
+      },
+      "mirror": {
+        "name": "画面镜像 (水平)"
+      },
+      "flip": {
+        "name": "画面翻转 (180° 吊装)"
+      }
+    },
+    "select": {
+      "night_vision_mode": {
+        "name": "红外夜视模式",
+        "state": {
+          "auto": "自动 (ICR)",
+          "off": "关闭 (仅白天)",
+          "on": "开启 (红外夜视)"
+        }
+      },
+      "ptz_preset": {
+        "name": "云台预置点 (PTZ)"
+      }
+    },
+    "number": {
+      "speaker_volume": {
+        "name": "扬声器音量"
+      },
+      "microphone_volume": {
+        "name": "麦克风灵敏度"
+      },
+      "audio_sensitivity": {
+        "name": "声音检测灵敏度"
+      }
+    },
+    "button": {
+      "ptz_up": {
+        "name": "云台向上"
+      },
+      "ptz_down": {
+        "name": "云台向下"
+      },
+      "ptz_left": {
+        "name": "云台向左"
+      },
+      "ptz_right": {
+        "name": "云台向右"
+      },
+      "siren": {
+        "name": "触发警报器"
+      },
+      "ptz_calibrate": {
+        "name": "云台校准"
+      }
+    },
+    "binary_sensor": {
+      "motion": {
+        "name": "移动"
+      },
+      "human_detected": {
+        "name": "检测到人形"
+      },
+      "sound_detected": {
+        "name": "检测到声音 / 哭声"
+      },
+      "privacy_active": {
+        "name": "隐私快门已关闭",
+        "state": {
+          "on": "关闭",
+          "off": "开启"
+        }
+      }
+    },
+    "sensor": {
+      "sd_status": {
+        "name": "MicroSD 卡状态"
+      },
+      "sd_used_percent": {
+        "name": "MicroSD 已用百分比"
+      },
+      "sd_free_gb": {
+        "name": "MicroSD 剩余空间"
+      },
+      "ptz_pan": {
+        "name": "云台水平角度 (Pan)"
+      },
+      "ptz_tilt": {
+        "name": "云台垂直角度 (Tilt)"
+      }
+    }
+  }
+}

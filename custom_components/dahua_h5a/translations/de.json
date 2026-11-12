@@ -1,0 +1,166 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Dahua H5A / Hero Kamera hinzufügen",
+        "description": "Lokale Verbindung zu einer Dahua H5A / Hero-Serie Kamera über den nativen NetSDK TCP-Port (37777) und RTSP-Port (554). Sie können mehrere Kameras hinzufügen — jede Kamera wird anhand ihrer Seriennummer identifiziert.",
+        "data": {
+          "host": "Kamera-IP / Hostname",
+          "port": "NetSDK TCP-Port",
+          "rtsp_port": "RTSP-Port",
+          "username": "Benutzername",
+          "password": "Passwort"
+        }
+      },
+      "reconfigure": {
+        "title": "Dahua H5A Kamera neu konfigurieren",
+        "description": "IP-Adresse, Ports oder Zugangsdaten für diese Kamera aktualisieren.",
+        "data": {
+          "host": "Kamera-IP / Hostname",
+          "port": "NetSDK TCP-Port",
+          "rtsp_port": "RTSP-Port",
+          "username": "Benutzername",
+          "password": "Passwort"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Verbindung zur Kamera über TCP-Port 37777 fehlgeschlagen",
+      "invalid_auth": "Ungültiger Benutzername oder Passwort (DVR2 0xa0 Authentifizierung fehlgeschlagen)",
+      "unknown": "Unerwarteter Fehler aufgetreten"
+    },
+    "abort": {
+      "already_configured": "Diese Kamera ist bereits konfiguriert",
+      "reconfigure_successful": "Kamerakonfiguration erfolgreich aktualisiert"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Dahua H5A Optionen",
+        "data": {
+          "scan_interval": "Abfrageintervall des Status (Sekunden)",
+          "stream_subtype": "RTSP-Videostream-Profil"
+        }
+      }
+    }
+  },
+  "entity": {
+    "camera": {
+      "camera": {
+        "name": "Live-Stream"
+      }
+    },
+    "switch": {
+      "privacy_mode": {
+        "name": "Privatsphäre-Modus (Objektiv verbergen)"
+      },
+      "human_detection": {
+        "name": "KI-Personenerkennung"
+      },
+      "pet_detection": {
+        "name": "KI-Haustiererkennung"
+      },
+      "smart_tracking": {
+        "name": "KI-Auto-Tracking (Automatische Verfolgung)"
+      },
+      "motion_detection": {
+        "name": "Bewegungserkennung"
+      },
+      "audio_detection": {
+        "name": "Geräusch- / Babygeschrei-Erkennung"
+      },
+      "status_led": {
+        "name": "Status-LED"
+      },
+      "audio_encode": {
+        "name": "Audio im Videostream aufzeichnen"
+      },
+      "mirror": {
+        "name": "Bild spiegeln (Horizontal)"
+      },
+      "flip": {
+        "name": "Bild drehen (180° Deckenmontage)"
+      }
+    },
+    "select": {
+      "night_vision_mode": {
+        "name": "IR-Nachtsichtmodus",
+        "state": {
+          "auto": "Automatisch (ICR)",
+          "off": "Aus (Nur Tag)",
+          "on": "Ein (IR-Nacht)"
+        }
+      },
+      "ptz_preset": {
+        "name": "PTZ-Preset"
+      }
+    },
+    "number": {
+      "speaker_volume": {
+        "name": "Lautsprecherlautstärke"
+      },
+      "microphone_volume": {
+        "name": "Mikrofonempfindlichkeit"
+      },
+      "audio_sensitivity": {
+        "name": "Empfindlichkeit der Geräuscherkennung"
+      }
+    },
+    "button": {
+      "ptz_up": {
+        "name": "PTZ Nach oben"
+      },
+      "ptz_down": {
+        "name": "PTZ Nach unten"
+      },
+      "ptz_left": {
+        "name": "PTZ Nach links"
+      },
+      "ptz_right": {
+        "name": "PTZ Nach rechts"
+      },
+      "siren": {
+        "name": "Sirene auslösen"
+      },
+      "ptz_calibrate": {
+        "name": "PTZ kalibrieren"
+      }
+    },
+    "binary_sensor": {
+      "motion": {
+        "name": "Bewegung"
+      },
+      "human_detected": {
+        "name": "Person erkannt"
+      },
+      "sound_detected": {
+        "name": "Geräusch / Weinen erkannt"
+      },
+      "privacy_active": {
+        "name": "Privatsphäre-Abdeckung",
+        "state": {
+          "on": "Geschlossen",
+          "off": "Offen"
+        }
+      }
+    },
+    "sensor": {
+      "sd_status": {
+        "name": "MicroSD-Kartenstatus"
+      },
+      "sd_used_percent": {
+        "name": "MicroSD belegt"
+      },
+      "sd_free_gb": {
+        "name": "MicroSD freier Speicher"
+      },
+      "ptz_pan": {
+        "name": "PTZ-Schwenkwinkel (Pan)"
+      },
+      "ptz_tilt": {
+        "name": "PTZ-Neigungswinkel (Tilt)"
+      }
+    }
+  }
+}

@@ -1,0 +1,166 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Додати камеру Dahua H5A / Hero",
+        "description": "Підключіться локально до камери Dahua H5A / серії Hero через нативний TCP-порт NetSDK (37777) та порт RTSP (554). Ви можете додати кілька камер — кожна ідентифікується за серійним номером.",
+        "data": {
+          "host": "IP-адреса / ім'я хоста камери",
+          "port": "TCP-порт NetSDK",
+          "rtsp_port": "Порт RTSP",
+          "username": "Ім'я користувача",
+          "password": "Пароль"
+        }
+      },
+      "reconfigure": {
+        "title": "Переналаштувати камеру Dahua H5A",
+        "description": "Оновіть IP-адресу, порти або облікові дані для цієї камери.",
+        "data": {
+          "host": "IP-адреса / ім'я хоста камери",
+          "port": "TCP-порт NetSDK",
+          "rtsp_port": "Порт RTSP",
+          "username": "Ім'я користувача",
+          "password": "Пароль"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Не вдалося підключитися до камери через TCP-порт 37777",
+      "invalid_auth": "Невірне ім'я користувача або пароль (помилка автентифікації DVR2 0xa0)",
+      "unknown": "Сталася неочікувана помилка"
+    },
+    "abort": {
+      "already_configured": "Ця камера вже налаштована",
+      "reconfigure_successful": "Конфігурацію камери успішно оновлено"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Параметри Dahua H5A",
+        "data": {
+          "scan_interval": "Інтервал опитування стану (секунди)",
+          "stream_subtype": "Профіль відеопотоку RTSP"
+        }
+      }
+    }
+  },
+  "entity": {
+    "camera": {
+      "camera": {
+        "name": "Пряма трансляція"
+      }
+    },
+    "switch": {
+      "privacy_mode": {
+        "name": "Маска приватності (сховати об'єктив)"
+      },
+      "human_detection": {
+        "name": "ШІ-виявлення людей"
+      },
+      "pet_detection": {
+        "name": "ШІ-виявлення тварин"
+      },
+      "smart_tracking": {
+        "name": "ШІ-автоматичне відстеження (Auto-Tracking)"
+      },
+      "motion_detection": {
+        "name": "Виявлення руху"
+      },
+      "audio_detection": {
+        "name": "Виявлення гучного звуку / плачу дитини"
+      },
+      "status_led": {
+        "name": "Світлодіодний індикатор стану"
+      },
+      "audio_encode": {
+        "name": "Запис звуку у потоці"
+      },
+      "mirror": {
+        "name": "Дзеркальне відображення (горизонтально)"
+      },
+      "flip": {
+        "name": "Переворот зображення (180° кріплення на стелі)"
+      }
+    },
+    "select": {
+      "night_vision_mode": {
+        "name": "Режим ІЧ нічного бачення",
+        "state": {
+          "auto": "Автоматично (ICR)",
+          "off": "Вимкнено (лише день)",
+          "on": "Увімкнено (ІЧ ніч)"
+        }
+      },
+      "ptz_preset": {
+        "name": "Пресет PTZ"
+      }
+    },
+    "number": {
+      "speaker_volume": {
+        "name": "Гучність динаміка"
+      },
+      "microphone_volume": {
+        "name": "Чутливість мікрофона"
+      },
+      "audio_sensitivity": {
+        "name": "Чутливість виявлення звуку"
+      }
+    },
+    "button": {
+      "ptz_up": {
+        "name": "PTZ Вгору"
+      },
+      "ptz_down": {
+        "name": "PTZ Вниз"
+      },
+      "ptz_left": {
+        "name": "PTZ Вліво"
+      },
+      "ptz_right": {
+        "name": "PTZ Вправо"
+      },
+      "siren": {
+        "name": "Увімкнути сирену"
+      },
+      "ptz_calibrate": {
+        "name": "Калібрувати PTZ"
+      }
+    },
+    "binary_sensor": {
+      "motion": {
+        "name": "Рух"
+      },
+      "human_detected": {
+        "name": "Виявлено людину"
+      },
+      "sound_detected": {
+        "name": "Виявлено звук / плач"
+      },
+      "privacy_active": {
+        "name": "Шторка приватності закрита",
+        "state": {
+          "on": "Закрита",
+          "off": "Відкрита"
+        }
+      }
+    },
+    "sensor": {
+      "sd_status": {
+        "name": "Стан карти MicroSD"
+      },
+      "sd_used_percent": {
+        "name": "Використано MicroSD"
+      },
+      "sd_free_gb": {
+        "name": "Вільне місце на MicroSD"
+      },
+      "ptz_pan": {
+        "name": "Кут повороту PTZ (Pan)"
+      },
+      "ptz_tilt": {
+        "name": "Кут нахилу PTZ (Tilt)"
+      }
+    }
+  }
+}

@@ -1,0 +1,166 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Přidat kameru Dahua H5A / Hero",
+        "description": "Připojte se lokálně ke kameře Dahua H5A / řady Hero přes nativní port TCP NetSDK (37777) a port RTSP (554). Můžete přidat více kamer – každá je identifikována podle sériového čísla.",
+        "data": {
+          "host": "IP adresa / název hostitele kamery",
+          "port": "TCP port NetSDK",
+          "rtsp_port": "Port RTSP",
+          "username": "Uživatelské jméno",
+          "password": "Heslo"
+        }
+      },
+      "reconfigure": {
+        "title": "Přenastavit kameru Dahua H5A",
+        "description": "Aktualizujte IP adresu, porty nebo přihlašovací údaje této kamery.",
+        "data": {
+          "host": "IP adresa / název hostitele kamery",
+          "port": "TCP port NetSDK",
+          "rtsp_port": "Port RTSP",
+          "username": "Uživatelské jméno",
+          "password": "Heslo"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Nepodařilo se připojit ke kameře na TCP portu 37777",
+      "invalid_auth": "Neplatné uživatelské jméno nebo heslo (ověření DVR2 0xa0 selhalo)",
+      "unknown": "Došlo k neočekávané chybě"
+    },
+    "abort": {
+      "already_configured": "Tato kamera je již nakonfigurována",
+      "reconfigure_successful": "Konfigurace kamery byla úspěšně aktualizována"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Možnosti Dahua H5A",
+        "data": {
+          "scan_interval": "Interval dotazování na stav (sekundy)",
+          "stream_subtype": "Profil video streamu RTSP"
+        }
+      }
+    }
+  },
+  "entity": {
+    "camera": {
+      "camera": {
+        "name": "Živý přenos"
+      }
+    },
+    "switch": {
+      "privacy_mode": {
+        "name": "Maska soukromí (skrýt objektiv)"
+      },
+      "human_detection": {
+        "name": "AI detekce osob"
+      },
+      "pet_detection": {
+        "name": "AI detekce zvířat"
+      },
+      "smart_tracking": {
+        "name": "AI automatické sledování (Auto-Tracking)"
+      },
+      "motion_detection": {
+        "name": "Detekce pohybu"
+      },
+      "audio_detection": {
+        "name": "Detekce zvuku / dětského pláče"
+      },
+      "status_led": {
+        "name": "Stavová LED dioda"
+      },
+      "audio_encode": {
+        "name": "Záznam zvuku ve streamu"
+      },
+      "mirror": {
+        "name": "Zrcadlení obrazu (vodorovně)"
+      },
+      "flip": {
+        "name": "Otočení obrazu (180° stropní montáž)"
+      }
+    },
+    "select": {
+      "night_vision_mode": {
+        "name": "Režim IR nočního vidění",
+        "state": {
+          "auto": "Automaticky (ICR)",
+          "off": "Vypnuto (pouze den)",
+          "on": "Zapnuto (IR noc)"
+        }
+      },
+      "ptz_preset": {
+        "name": "PTZ předvolba"
+      }
+    },
+    "number": {
+      "speaker_volume": {
+        "name": "Hlasitost reproduktoru"
+      },
+      "microphone_volume": {
+        "name": "Citlivost mikrofonu"
+      },
+      "audio_sensitivity": {
+        "name": "Citlivost detekce zvuku"
+      }
+    },
+    "button": {
+      "ptz_up": {
+        "name": "PTZ Nahoru"
+      },
+      "ptz_down": {
+        "name": "PTZ Dolů"
+      },
+      "ptz_left": {
+        "name": "PTZ Doleva"
+      },
+      "ptz_right": {
+        "name": "PTZ Doprava"
+      },
+      "siren": {
+        "name": "Spustit sirénu"
+      },
+      "ptz_calibrate": {
+        "name": "Kalibrovat PTZ"
+      }
+    },
+    "binary_sensor": {
+      "motion": {
+        "name": "Pohyb"
+      },
+      "human_detected": {
+        "name": "Detekována osoba"
+      },
+      "sound_detected": {
+        "name": "Detekován zvuk / pláč"
+      },
+      "privacy_active": {
+        "name": "Clona soukromí zavřena",
+        "state": {
+          "on": "Zavřena",
+          "off": "Otevřena"
+        }
+      }
+    },
+    "sensor": {
+      "sd_status": {
+        "name": "Stav karty MicroSD"
+      },
+      "sd_used_percent": {
+        "name": "Využití karty MicroSD"
+      },
+      "sd_free_gb": {
+        "name": "Volné místo na MicroSD"
+      },
+      "ptz_pan": {
+        "name": "Úhel otočení PTZ (Pan)"
+      },
+      "ptz_tilt": {
+        "name": "Úhel náklonu PTZ (Tilt)"
+      }
+    }
+  }
+}

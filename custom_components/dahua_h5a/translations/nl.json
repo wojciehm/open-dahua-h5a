@@ -1,0 +1,166 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Dahua H5A / Hero-camera toevoegen",
+        "description": "Maak lokaal verbinding met een Dahua H5A / Hero-serie camera via de native NetSDK TCP-poort (37777) en RTSP-poort (554). U kunt meerdere camera's toevoegen; elke camera wordt geïdentificeerd aan de hand van het serienummer.",
+        "data": {
+          "host": "Camera-IP / Hostnaam",
+          "port": "NetSDK TCP-poort",
+          "rtsp_port": "RTSP-poort",
+          "username": "Gebruikersnaam",
+          "password": "Wachtwoord"
+        }
+      },
+      "reconfigure": {
+        "title": "Dahua H5A-camera opnieuw configureren",
+        "description": "Werk het IP-adres, de poorten of de inloggegevens voor deze camera bij.",
+        "data": {
+          "host": "Camera-IP / Hostnaam",
+          "port": "NetSDK TCP-poort",
+          "rtsp_port": "RTSP-poort",
+          "username": "Gebruikersnaam",
+          "password": "Wachtwoord"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Kan geen verbinding maken met de camera op TCP-poort 37777",
+      "invalid_auth": "Ongeldige gebruikersnaam of wachtwoord (DVR2 0xa0-authenticatie mislukt)",
+      "unknown": "Er is een onverwachte fout opgetreden"
+    },
+    "abort": {
+      "already_configured": "Deze camera is al geconfigureerd",
+      "reconfigure_successful": "Cameraconfiguratie succesvol bijgewerkt"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Dahua H5A-opties",
+        "data": {
+          "scan_interval": "Status-interval (seconden)",
+          "stream_subtype": "RTSP-videostreamprofiel"
+        }
+      }
+    }
+  },
+  "entity": {
+    "camera": {
+      "camera": {
+        "name": "Livestream"
+      }
+    },
+    "switch": {
+      "privacy_mode": {
+        "name": "Privacymasker (lens verbergen)"
+      },
+      "human_detection": {
+        "name": "AI-persoonsdetectie"
+      },
+      "pet_detection": {
+        "name": "AI-huisdierdetectie"
+      },
+      "smart_tracking": {
+        "name": "AI slim automatisch volgen"
+      },
+      "motion_detection": {
+        "name": "Bewegingsdetectie"
+      },
+      "audio_detection": {
+        "name": "Detectie van abnormaal geluid / huilende baby"
+      },
+      "status_led": {
+        "name": "Statusindicator-LED"
+      },
+      "audio_encode": {
+        "name": "Audio-opname in stream"
+      },
+      "mirror": {
+        "name": "Beeld spiegelen (horizontaal)"
+      },
+      "flip": {
+        "name": "Beeld kantelen (180° plafondmontage)"
+      }
+    },
+    "select": {
+      "night_vision_mode": {
+        "name": "IR-nachtzichtmodus",
+        "state": {
+          "auto": "Automatisch (ICR)",
+          "off": "Uit (alleen overdag)",
+          "on": "Aan (IR-nacht)"
+        }
+      },
+      "ptz_preset": {
+        "name": "PTZ-preset"
+      }
+    },
+    "number": {
+      "speaker_volume": {
+        "name": "Luidsprekervolume"
+      },
+      "microphone_volume": {
+        "name": "Microfoongevoeligheid"
+      },
+      "audio_sensitivity": {
+        "name": "Gevoeligheid geluidsdetectie"
+      }
+    },
+    "button": {
+      "ptz_up": {
+        "name": "PTZ Omhoog"
+      },
+      "ptz_down": {
+        "name": "PTZ Omlaag"
+      },
+      "ptz_left": {
+        "name": "PTZ Links"
+      },
+      "ptz_right": {
+        "name": "PTZ Rechts"
+      },
+      "siren": {
+        "name": "Sirene activeren"
+      },
+      "ptz_calibrate": {
+        "name": "PTZ kalibreren"
+      }
+    },
+    "binary_sensor": {
+      "motion": {
+        "name": "Beweging"
+      },
+      "human_detected": {
+        "name": "Persoon gedetecteerd"
+      },
+      "sound_detected": {
+        "name": "Geluid / gehuil gedetecteerd"
+      },
+      "privacy_active": {
+        "name": "Privacyluik gesloten",
+        "state": {
+          "on": "Gesloten",
+          "off": "Open"
+        }
+      }
+    },
+    "sensor": {
+      "sd_status": {
+        "name": "MicroSD-kaartstatus"
+      },
+      "sd_used_percent": {
+        "name": "MicroSD gebruikt"
+      },
+      "sd_free_gb": {
+        "name": "MicroSD vrije ruimte"
+      },
+      "ptz_pan": {
+        "name": "PTZ-draaihoek (Pan)"
+      },
+      "ptz_tilt": {
+        "name": "PTZ-kantelhoek (Tilt)"
+      }
+    }
+  }
+}

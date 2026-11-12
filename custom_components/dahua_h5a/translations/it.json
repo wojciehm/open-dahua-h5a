@@ -1,0 +1,166 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Aggiungi telecamera Dahua H5A / Hero",
+        "description": "Connettiti localmente a una telecamera Dahua H5A / serie Hero tramite la porta TCP nativa NetSDK (37777) e la porta RTSP (554). Puoi aggiungere più telecamere; ciascuna è identificata dal numero di serie hardware.",
+        "data": {
+          "host": "IP / Hostname della telecamera",
+          "port": "Porta TCP NetSDK",
+          "rtsp_port": "Porta RTSP",
+          "username": "Nome utente",
+          "password": "Password"
+        }
+      },
+      "reconfigure": {
+        "title": "Riconfigura telecamera Dahua H5A",
+        "description": "Aggiorna l'indirizzo IP, le porte o le credenziali di questa telecamera.",
+        "data": {
+          "host": "IP / Hostname della telecamera",
+          "port": "Porta TCP NetSDK",
+          "rtsp_port": "Porta RTSP",
+          "username": "Nome utente",
+          "password": "Password"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Impossibile connettersi alla telecamera sulla porta TCP 37777",
+      "invalid_auth": "Nome utente o password non validi (autenticazione DVR2 0xa0 fallita)",
+      "unknown": "Si è verificato un errore imprevisto"
+    },
+    "abort": {
+      "already_configured": "Questa telecamera è già configurata",
+      "reconfigure_successful": "Configurazione della telecamera aggiornata con successo"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Opzioni Dahua H5A",
+        "data": {
+          "scan_interval": "Intervallo di aggiornamento stato (secondi)",
+          "stream_subtype": "Profilo flusso video RTSP"
+        }
+      }
+    }
+  },
+  "entity": {
+    "camera": {
+      "camera": {
+        "name": "Flusso dal vivo"
+      }
+    },
+    "switch": {
+      "privacy_mode": {
+        "name": "Maschera privacy (nascondi obiettivo)"
+      },
+      "human_detection": {
+        "name": "Rilevamento persone IA"
+      },
+      "pet_detection": {
+        "name": "Rilevamento animali domestici IA"
+      },
+      "smart_tracking": {
+        "name": "Tracciamento automatico intelligente IA"
+      },
+      "motion_detection": {
+        "name": "Rilevamento movimento"
+      },
+      "audio_detection": {
+        "name": "Rilevamento suoni anomali / pianto neonato"
+      },
+      "status_led": {
+        "name": "LED indicatore di stato"
+      },
+      "audio_encode": {
+        "name": "Registrazione audio nel flusso"
+      },
+      "mirror": {
+        "name": "Specchia immagine (orizzontale)"
+      },
+      "flip": {
+        "name": "Capovolgi immagine (180° montaggio a soffitto)"
+      }
+    },
+    "select": {
+      "night_vision_mode": {
+        "name": "Modalità visione notturna IR",
+        "state": {
+          "auto": "Auto (ICR)",
+          "off": "Spento (solo giorno)",
+          "on": "Acceso (notte IR)"
+        }
+      },
+      "ptz_preset": {
+        "name": "Preset PTZ"
+      }
+    },
+    "number": {
+      "speaker_volume": {
+        "name": "Volume altoparlante"
+      },
+      "microphone_volume": {
+        "name": "Sensibilità microfono"
+      },
+      "audio_sensitivity": {
+        "name": "Sensibilità rilevamento suoni"
+      }
+    },
+    "button": {
+      "ptz_up": {
+        "name": "PTZ Su"
+      },
+      "ptz_down": {
+        "name": "PTZ Giù"
+      },
+      "ptz_left": {
+        "name": "PTZ Sinistra"
+      },
+      "ptz_right": {
+        "name": "PTZ Destra"
+      },
+      "siren": {
+        "name": "Attiva sirena"
+      },
+      "ptz_calibrate": {
+        "name": "Calibra PTZ"
+      }
+    },
+    "binary_sensor": {
+      "motion": {
+        "name": "Movimento"
+      },
+      "human_detected": {
+        "name": "Persona rilevata"
+      },
+      "sound_detected": {
+        "name": "Suono / pianto rilevato"
+      },
+      "privacy_active": {
+        "name": "Otturatore privacy chiuso",
+        "state": {
+          "on": "Chiuso",
+          "off": "Aperto"
+        }
+      }
+    },
+    "sensor": {
+      "sd_status": {
+        "name": "Stato scheda MicroSD"
+      },
+      "sd_used_percent": {
+        "name": "MicroSD utilizzata"
+      },
+      "sd_free_gb": {
+        "name": "Spazio libero MicroSD"
+      },
+      "ptz_pan": {
+        "name": "Angolo rotazione PTZ (Pan)"
+      },
+      "ptz_tilt": {
+        "name": "Angolo inclinazione PTZ (Tilt)"
+      }
+    }
+  }
+}

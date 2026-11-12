@@ -4,6 +4,16 @@
   <img src="assets/dahua-h5a-camera.webp" alt="Dahua H5A / Hero Series Indoor PT Camera" width="220" />
 </p>
 
+<p align="center">
+  <a href="https://github.com/wojciehm/open-dahua-h5a/releases"><img src="https://img.shields.io/github/v/release/wojciehm/open-dahua-h5a?style=for-the-badge&logo=github" alt="GitHub Release" /></a>
+  <a href="https://github.com/wojciehm/open-dahua-h5a/actions/workflows/validate.yaml"><img src="https://img.shields.io/github/actions/workflow/status/wojciehm/open-dahua-h5a/validate.yaml?branch=main&style=for-the-badge&logo=homeassistant&label=HACS%20%26%20Hassfest" alt="HACS & Hassfest Validation" /></a>
+  <a href="https://github.com/hacs/integration"><img src="https://img.shields.io/badge/HACS-Integration-41BDF5.svg?style=for-the-badge&logo=homeassistantcommunitystore" alt="HACS Integration" /></a>
+  <a href="https://www.home-assistant.io/"><img src="https://img.shields.io/badge/Home%20Assistant-2024.4%2B-41BDF5.svg?style=for-the-badge&logo=homeassistant" alt="Home Assistant 2024.4+" /></a>
+  <img src="https://img.shields.io/badge/IoT%20Class-local__push-00B050.svg?style=for-the-badge" alt="IoT Class: local_push" />
+  <a href="#supported-languages--community-translations"><img src="https://img.shields.io/badge/Languages-12-8A2BE2.svg?style=for-the-badge" alt="12 Supported Languages" /></a>
+  <a href="LICENSE"><img src="https://img.shields.io/github/license/wojciehm/open-dahua-h5a?style=for-the-badge" alt="MIT License" /></a>
+</p>
+
 Clean-room, dependency-free **Home Assistant Custom Integration (`custom_components/dahua_h5a`)**, **async Python library (`aio_dahua_h5a`)**, and **CLI (`dahua-h5a`)** for 100% local control of **Dahua H5A 5MP 360° Indoor Wi-Fi 6 (`DH-H5A` / `IPC-H5A`)** and Hero-series cameras over **TCP Port `37777` (NetSDK DVR2 `0xa0` + Embedded JSON-RPC `0xf6`)** and **RTSP Port `554`**.
 
 > **Legal & Interoperability Notice (EU Directive 2009/24/EC Art. 6 & § 69e UrhG):**  
@@ -23,6 +33,8 @@ See [`docs/PROTOCOL_SPEC.md`](docs/PROTOCOL_SPEC.md) for the full byte-level spe
 ---
 
 ## Home Assistant Integration (HACS — Multi-Camera UI Workflow)
+
+[![Open your Home Assistant instance and open a repository inside the Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=wojciehm&repository=open-dahua-h5a&category=integration)
 
 The repository is structured as a ready-to-install **HACS Integration** (`custom_components/dahua_h5a` + `hacs.json`) with a full UI `ConfigFlow` (no YAML or static files required):
 

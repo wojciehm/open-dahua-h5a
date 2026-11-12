@@ -16,8 +16,9 @@
 
 Clean-room, dependency-free **Home Assistant Custom Integration (`custom_components/dahua_h5a`)**, **async Python library (`aio_dahua_h5a`)**, and **CLI (`dahua-h5a`)** for 100% local control of **Dahua H5A 5MP 360° Indoor Wi-Fi 6 (`DH-H5A` / `IPC-H5A`)** and Hero-series cameras over **TCP Port `37777` (NetSDK DVR2 `0xa0` + Embedded JSON-RPC `0xf6`)** and **RTSP Port `554`**.
 
-> **Legal & Interoperability Notice (EU Directive 2009/24/EC Art. 6 & § 69e UrhG):**  
+> **Legal & Interoperability Notice (EU Directive 2009/24/EC Art. 6 & § 69e UrhG) & Disclaimer (Use at Your Own Risk):**  
 > This clean-room open-source project was created **solely for interoperability**—enabling legal owners of Dahua H5A / Hero-series cameras to integrate their own hardware with open-source smart home systems (**Home Assistant**) on a local network, in accordance with **Article 6 of EU Directive 2009/24/EC** and **§ 69e of the German Copyright Act (UrhG)**.  
+> - **Use at your own risk (`AS IS`, No Warranty):** This software communicates directly with the camera's internal NetSDK configuration tables and flash NVRAM over TCP Port `37777`. It is provided **"AS IS"** without warranty of any kind. You use this integration and CLI entirely at your own risk; the authors are not responsible for any configuration corruption, hardware/firmware quirks, or device issues.  
 > - **No circumvention of security or access controls:** Valid administrator credentials (`username` and `password`) for the device are strictly required.  
 > - **Zero vendor code:** This repository contains **no** proprietary Dahua SDK libraries, binary blobs, or firmware files—only an independent Python `asyncio` implementation built from scratch by **Google Antigravity (Gemini 4 Argon High)**.  
 > - **No affiliation:** Not affiliated with, endorsed by, or supported by Dahua Technology.
@@ -55,6 +56,12 @@ The repository is structured as a ready-to-install **HACS Integration** (`custom
 - **Buttons (6)**: PTZ Up, PTZ Down, PTZ Left, PTZ Right, Trigger Siren, Calibrate PTZ.
 - **Binary Sensors (4)**: Motion (`VideoMotion`), Person Detected (`SmartMotionHuman`), Sound / Cry Detected (`AudioMutation` / `BabyCry`), Privacy Shutter Closed.
 - **Sensors (5)**: MicroSD Card Status, MicroSD Used (`%`), MicroSD Free Space (`GB`), PTZ Pan Angle, PTZ Tilt Angle.
+
+> [!CAUTION]
+> **Known Firmware Bug on `DH-H5A` (`V2.860.0000000.26.R`) — Front Green Status LED (`LightGlobal`):**  
+> The `Status Indicator LED` entity (`switch.<camera>_status_led`) is **disabled by default** in Home Assistant (`entity_registry_enabled_default=False`).  
+> On `DH-H5A` firmware `V2.860.0000000.26.R`, calling `configManager.setConfig("LightGlobal", ...)` over Port `37777` JSON-RPC (even with `{"Enable": true}`) overwrites an internal 16-byte block in the camera's encrypted flash configuration at offset `0x23760` (`4d85760d2339312ec949ed08e6d75ec7` → `37afe76e65aafaac7cecf9270520d4d6`), which **permanently turns off the front green status LED** across reboots even though `getConfig("LightGlobal")` still reports `Enable: true`.  
+> Do **not** enable or toggle `switch.<camera>_status_led` or run `odh led` on `DH-H5A` unless you intend to keep the green status LED permanently off (or have backed up your `146,240`-byte binary flash configuration via `await client.export_pack_config()` / `await client.import_pack_config(pack_bytes)`).
 
 ---
 

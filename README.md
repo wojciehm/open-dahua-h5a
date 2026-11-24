@@ -39,7 +39,7 @@ See [`docs/PROTOCOL_SPEC.md`](docs/PROTOCOL_SPEC.md) for the full byte-level spe
 
 The repository is structured as a ready-to-install **HACS Integration** (`custom_components/dahua_h5a` + `hacs.json`) with a full UI `ConfigFlow` (no YAML or static files required):
 
-1. Open **HACS** in Home Assistant -> **Custom repositories** -> add `https://github.com/wojciehm/open-dahua-h5a` with category **Integration**.
+1. Open **HACS** in Home Assistant and search for **Dahua H5A (Local NetSDK)** *(or click the **Open in HACS** button above; if installing manually before catalog sync, open **HACS → Custom repositories** and add `https://github.com/wojciehm/open-dahua-h5a` as **Integration**)*.
 2. Click **Download** and restart Home Assistant.
 3. Go to **Settings -> Devices & Services -> Add Integration** and search for **Dahua H5A (Local NetSDK)**.
 4. Enter your camera's **IP / Hostname**, **NetSDK Port (`37777`)**, **RTSP Port (`554`)**, **Username (`admin`)**, and **Password**.

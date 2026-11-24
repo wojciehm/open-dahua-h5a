@@ -22,6 +22,14 @@
           "username": "Nazwa użytkownika",
           "password": "Hasło"
         }
+      },
+      "reauth_confirm": {
+        "title": "Ponowna autoryzacja kamery Dahua H5A",
+        "description": "Autoryzacja dla kamery {host} nie powiodła się. Podaj nowe dane logowania, aby uniknąć zablokowania konta w kamerze.",
+        "data": {
+          "username": "Nazwa użytkownika",
+          "password": "Hasło"
+        }
       }
     },
     "error": {
@@ -31,7 +39,8 @@
     },
     "abort": {
       "already_configured": "Ta kamera jest już skonfigurowana",
-      "reconfigure_successful": "Konfiguracja kamery została zaktualizowana"
+      "reconfigure_successful": "Konfiguracja kamery została zaktualizowana",
+      "reauth_successful": "Ponowna autoryzacja zakończyła się powodzeniem"
     }
   },
   "options": {
@@ -69,9 +78,6 @@
       },
       "audio_detection": {
         "name": "Wykrywanie dźwięku i płaczu"
-      },
-      "status_led": {
-        "name": "Dioda statusu LED"
       },
       "audio_encode": {
         "name": "Nagrywanie dźwięku w strumieniu"
@@ -143,6 +149,9 @@
           "on": "Zamknięta",
           "off": "Otwarta"
         }
+      },
+      "status_led": {
+        "name": "Dioda statusu LED"
       }
     },
     "sensor": {

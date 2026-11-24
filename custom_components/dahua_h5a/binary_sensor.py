@@ -11,6 +11,7 @@ from homeassistant.components.binary_sensor import (
     BinarySensorEntityDescription,
 )
 from homeassistant.config_entries import ConfigEntry
+from homeassistant.const import EntityCategory
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 
@@ -57,6 +58,13 @@ BINARY_SENSOR_DESCRIPTIONS: tuple[DahuaH5ABinarySensorDescription, ...] = (
         translation_key="privacy_active",
         icon="mdi:eye-off-outline",
         is_on_fn=lambda coord: bool(coord.data and coord.data.privacy_mode),
+    ),
+    DahuaH5ABinarySensorDescription(
+        key="status_led",
+        translation_key="status_led",
+        icon="mdi:led-on",
+        entity_category=EntityCategory.DIAGNOSTIC,
+        is_on_fn=lambda coord: bool(coord.data and coord.data.status_led),
     ),
 )
 

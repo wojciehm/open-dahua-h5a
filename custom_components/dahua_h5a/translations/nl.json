@@ -22,6 +22,14 @@
           "username": "Gebruikersnaam",
           "password": "Wachtwoord"
         }
+      },
+      "reauth_confirm": {
+        "title": "Dahua H5A-camera opnieuw authenticeren",
+        "description": "Authenticatie mislukt voor {host}. Voer de bijgewerkte inloggegevens in om vergrendeling van het camera-account te voorkomen.",
+        "data": {
+          "username": "Gebruikersnaam",
+          "password": "Wachtwoord"
+        }
       }
     },
     "error": {
@@ -31,7 +39,8 @@
     },
     "abort": {
       "already_configured": "Deze camera is al geconfigureerd",
-      "reconfigure_successful": "Cameraconfiguratie succesvol bijgewerkt"
+      "reconfigure_successful": "Cameraconfiguratie succesvol bijgewerkt",
+      "reauth_successful": "Herauthenticatie geslaagd"
     }
   },
   "options": {
@@ -69,9 +78,6 @@
       },
       "audio_detection": {
         "name": "Detectie van abnormaal geluid / huilende baby"
-      },
-      "status_led": {
-        "name": "Statusindicator-LED"
       },
       "audio_encode": {
         "name": "Audio-opname in stream"
@@ -143,6 +149,9 @@
           "on": "Gesloten",
           "off": "Open"
         }
+      },
+      "status_led": {
+        "name": "Statusindicator-LED"
       }
     },
     "sensor": {

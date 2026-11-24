@@ -76,16 +76,6 @@ SWITCH_DESCRIPTIONS: tuple[DahuaH5ASwitchDescription, ...] = (
         turn_off_fn=lambda c: c.set_audio_detection(enabled=False),
     ),
     DahuaH5ASwitchDescription(
-        key="status_led",
-        translation_key="status_led",
-        icon="mdi:led-on",
-        entity_category=EntityCategory.CONFIG,
-        entity_registry_enabled_default=False,
-        value_fn=lambda s: s.status_led,
-        turn_on_fn=lambda c: c.set_status_led(True),
-        turn_off_fn=lambda c: c.set_status_led(False),
-    ),
-    DahuaH5ASwitchDescription(
         key="audio_encode",
         translation_key="audio_encode",
         icon="mdi:microphone",

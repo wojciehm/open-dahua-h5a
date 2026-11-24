@@ -22,6 +22,14 @@
           "username": "ユーザー名",
           "password": "パスワード"
         }
+      },
+      "reauth_confirm": {
+        "title": "Dahua H5A カメラの再認証",
+        "description": "{host} の認証に失敗しました。カメラのアカウントロックを防ぐため、更新された認証情報を入力してください。",
+        "data": {
+          "username": "ユーザー名",
+          "password": "パスワード"
+        }
       }
     },
     "error": {
@@ -31,7 +39,8 @@
     },
     "abort": {
       "already_configured": "このカメラは既に設定されています",
-      "reconfigure_successful": "カメラの設定が正常に更新されました"
+      "reconfigure_successful": "カメラの設定が正常に更新されました",
+      "reauth_successful": "再認証に成功しました"
     }
   },
   "options": {
@@ -69,9 +78,6 @@
       },
       "audio_detection": {
         "name": "異常音 / 赤ちゃんの泣き声検知"
-      },
-      "status_led": {
-        "name": "ステータス LED"
       },
       "audio_encode": {
         "name": "ストリーム音声録音"
@@ -143,6 +149,9 @@
           "on": "閉",
           "off": "開"
         }
+      },
+      "status_led": {
+        "name": "ステータス LED"
       }
     },
     "sensor": {

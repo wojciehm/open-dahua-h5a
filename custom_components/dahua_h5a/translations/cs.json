@@ -22,6 +22,14 @@
           "username": "Uživatelské jméno",
           "password": "Heslo"
         }
+      },
+      "reauth_confirm": {
+        "title": "Znovu ověřit kameru Dahua H5A",
+        "description": "Ověření pro {host} selhalo. Zadejte aktualizované přihlašovací údaje, abyste předešli zablokování účtu v kameře.",
+        "data": {
+          "username": "Uživatelské jméno",
+          "password": "Heslo"
+        }
       }
     },
     "error": {
@@ -31,7 +39,8 @@
     },
     "abort": {
       "already_configured": "Tato kamera je již nakonfigurována",
-      "reconfigure_successful": "Konfigurace kamery byla úspěšně aktualizována"
+      "reconfigure_successful": "Konfigurace kamery byla úspěšně aktualizována",
+      "reauth_successful": "Opětovné ověření proběhlo úspěšně"
     }
   },
   "options": {
@@ -69,9 +78,6 @@
       },
       "audio_detection": {
         "name": "Detekce zvuku / dětského pláče"
-      },
-      "status_led": {
-        "name": "Stavová LED dioda"
       },
       "audio_encode": {
         "name": "Záznam zvuku ve streamu"
@@ -143,6 +149,9 @@
           "on": "Zavřena",
           "off": "Otevřena"
         }
+      },
+      "status_led": {
+        "name": "Stavová LED dioda"
       }
     },
     "sensor": {

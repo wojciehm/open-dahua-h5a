@@ -22,6 +22,14 @@
           "username": "Nome utente",
           "password": "Password"
         }
+      },
+      "reauth_confirm": {
+        "title": "Riautentica telecamera Dahua H5A",
+        "description": "Autenticazione non riuscita per {host}. Inserisci le credenziali aggiornate per evitare il blocco dell'account sulla telecamera.",
+        "data": {
+          "username": "Nome utente",
+          "password": "Password"
+        }
       }
     },
     "error": {
@@ -31,7 +39,8 @@
     },
     "abort": {
       "already_configured": "Questa telecamera è già configurata",
-      "reconfigure_successful": "Configurazione della telecamera aggiornata con successo"
+      "reconfigure_successful": "Configurazione della telecamera aggiornata con successo",
+      "reauth_successful": "Riautenticazione completata con successo"
     }
   },
   "options": {
@@ -69,9 +78,6 @@
       },
       "audio_detection": {
         "name": "Rilevamento suoni anomali / pianto neonato"
-      },
-      "status_led": {
-        "name": "LED indicatore di stato"
       },
       "audio_encode": {
         "name": "Registrazione audio nel flusso"
@@ -143,6 +149,9 @@
           "on": "Chiuso",
           "off": "Aperto"
         }
+      },
+      "status_led": {
+        "name": "LED indicatore di stato"
       }
     },
     "sensor": {

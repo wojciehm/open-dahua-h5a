@@ -22,6 +22,14 @@
           "username": "用户名",
           "password": "密码"
         }
+      },
+      "reauth_confirm": {
+        "title": "重新验证大华 H5A 摄像机",
+        "description": "{host} 身份验证失败。请输入更新后的凭据，以避免摄像机账户被锁定。",
+        "data": {
+          "username": "用户名",
+          "password": "密码"
+        }
       }
     },
     "error": {
@@ -31,7 +39,8 @@
     },
     "abort": {
       "already_configured": "此摄像机已配置",
-      "reconfigure_successful": "摄像机配置已成功更新"
+      "reconfigure_successful": "摄像机配置已成功更新",
+      "reauth_successful": "重新验证成功"
     }
   },
   "options": {
@@ -69,9 +78,6 @@
       },
       "audio_detection": {
         "name": "异常声音 / 婴儿哭声检测"
-      },
-      "status_led": {
-        "name": "状态指示灯 LED"
       },
       "audio_encode": {
         "name": "视频流音频录制"
@@ -143,6 +149,9 @@
           "on": "关闭",
           "off": "开启"
         }
+      },
+      "status_led": {
+        "name": "状态指示灯 LED"
       }
     },
     "sensor": {

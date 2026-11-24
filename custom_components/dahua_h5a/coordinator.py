@@ -11,9 +11,17 @@ from typing import Any
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.const import CONF_HOST, CONF_PASSWORD, CONF_PORT, CONF_USERNAME
 from homeassistant.core import HomeAssistant, callback
+from homeassistant.exceptions import ConfigEntryAuthFailed
 from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
-from .api import CameraEvent, CameraState, DahuaH5AClient, DahuaH5AError, DeviceInfo
+from .api import (
+    CameraEvent,
+    CameraState,
+    DahuaAuthError,
+    DahuaH5AClient,
+    DahuaH5AError,
+    DeviceInfo,
+)
 from .const import (
     CONF_RTSP_PORT,
     CONF_SCAN_INTERVAL,
@@ -118,6 +126,12 @@ class DahuaH5ACoordinator(DataUpdateCoordinator[CameraState]):
             try:
                 await self._ensure_connected()
                 return await self.client.get_full_state()
+            except DahuaAuthError as err:
+                await self.client.close()
+                self._event_attached = False
+                raise ConfigEntryAuthFailed(
+                    f"Authentication failed for Dahua H5A ({self.config_entry.data[CONF_HOST]}): {err}"
+                ) from err
             except Exception as err:
                 _LOGGER.debug(
                     "Reconnecting to Dahua H5A (%s) after error: %s",
@@ -129,6 +143,12 @@ class DahuaH5ACoordinator(DataUpdateCoordinator[CameraState]):
                     self._event_attached = False
                     await self._ensure_connected()
                     return await self.client.get_full_state()
+                except DahuaAuthError as auth_err:
+                    await self.client.close()
+                    self._event_attached = False
+                    raise ConfigEntryAuthFailed(
+                        f"Authentication failed for Dahua H5A ({self.config_entry.data[CONF_HOST]}): {auth_err}"
+                    ) from auth_err
                 except Exception as retry_err:
                     raise UpdateFailed(
                         f"Error communicating with Dahua H5A ({self.config_entry.data[CONF_HOST]}): {retry_err}"
@@ -136,9 +156,17 @@ class DahuaH5ACoordinator(DataUpdateCoordinator[CameraState]):
 
     async def async_execute(self, coro_func: Any, *args: Any, **kwargs: Any) -> Any:
         """Execute a camera control command safely and refresh state."""
-        async with self._lock:
-            await self._ensure_connected()
-            result = await coro_func(*args, **kwargs)
+        try:
+            async with self._lock:
+                await self._ensure_connected()
+                result = await coro_func(*args, **kwargs)
+        except DahuaAuthError as err:
+            await self.client.close()
+            self._event_attached = False
+            self.config_entry.async_start_reauth(self.hass)
+            raise ConfigEntryAuthFailed(
+                f"Authentication failed for Dahua H5A ({self.config_entry.data[CONF_HOST]}): {err}"
+            ) from err
         await self.async_request_refresh()
         return result
 

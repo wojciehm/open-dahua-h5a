@@ -22,6 +22,14 @@
           "username": "Benutzername",
           "password": "Passwort"
         }
+      },
+      "reauth_confirm": {
+        "title": "Dahua H5A Kamera neu authentifizieren",
+        "description": "Authentifizierung für {host} fehlgeschlagen. Geben Sie die aktualisierten Zugangsdaten ein, um eine Kontosperre auf der Kamera zu vermeiden.",
+        "data": {
+          "username": "Benutzername",
+          "password": "Passwort"
+        }
       }
     },
     "error": {
@@ -31,7 +39,8 @@
     },
     "abort": {
       "already_configured": "Diese Kamera ist bereits konfiguriert",
-      "reconfigure_successful": "Kamerakonfiguration erfolgreich aktualisiert"
+      "reconfigure_successful": "Kamerakonfiguration erfolgreich aktualisiert",
+      "reauth_successful": "Erneute Authentifizierung erfolgreich"
     }
   },
   "options": {
@@ -69,9 +78,6 @@
       },
       "audio_detection": {
         "name": "Geräusch- / Babygeschrei-Erkennung"
-      },
-      "status_led": {
-        "name": "Status-LED"
       },
       "audio_encode": {
         "name": "Audio im Videostream aufzeichnen"
@@ -143,6 +149,9 @@
           "on": "Geschlossen",
           "off": "Offen"
         }
+      },
+      "status_led": {
+        "name": "Status-LED"
       }
     },
     "sensor": {

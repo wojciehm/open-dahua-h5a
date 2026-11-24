@@ -50,18 +50,18 @@ The repository is structured as a ready-to-install **HACS Integration** (`custom
 ![Dahua H5A Live Device View in Home Assistant](assets/dahua-h5a-home-assistant-live-device.webp)
 
 - **Camera**: 5MP H.265 Live Stream (`subtype=0`) or Sub Stream (`subtype=1`), RTSP JPEG Snapshots, Turn On/Off mapped to physical Privacy Shutter, plus entity services (`dahua_h5a.ptz_move`, `dahua_h5a.ptz_goto_preset`, `dahua_h5a.ptz_set_preset`, `dahua_h5a.ptz_remove_preset`, `dahua_h5a.trigger_siren`).
-- **Switches (10)**: Privacy Mask (Hide Lens), AI Human Detection, AI Pet Detection, AI Smart Auto-Tracking, Motion Detection, Abnormal Sound / Baby Cry Detection, Status Indicator LED, Stream Audio Recording, Image Mirror, Image Flip (180° Ceiling Mount).
+- **Switches (9)**: Privacy Mask (Hide Lens), AI Human Detection, AI Pet Detection, AI Smart Auto-Tracking, Motion Detection, Abnormal Sound / Baby Cry Detection, Stream Audio Recording, Image Mirror, Image Flip (180° Ceiling Mount).
 - **Selects (2)**: Night Vision IR Mode (`auto` / `off` / `on`), Dynamic PTZ Preset Selector.
 - **Numbers (3)**: Speaker Volume (`0–100%`), Microphone Sensitivity (`0–100%`), Sound Detection Sensitivity (`1–100%`).
 - **Buttons (6)**: PTZ Up, PTZ Down, PTZ Left, PTZ Right, Trigger Siren, Calibrate PTZ.
-- **Binary Sensors (4)**: Motion (`VideoMotion`), Person Detected (`SmartMotionHuman`), Sound / Cry Detected (`AudioMutation` / `BabyCry`), Privacy Shutter Closed.
+- **Binary Sensors (5)**: Motion (`VideoMotion`), Person Detected (`SmartMotionHuman`), Sound / Cry Detected (`AudioMutation` / `BabyCry`), Privacy Shutter Closed, Status Indicator LED (read-only diagnostic).
 - **Sensors (5)**: MicroSD Card Status, MicroSD Used (`%`), MicroSD Free Space (`GB`), PTZ Pan Angle, PTZ Tilt Angle.
 
 > [!CAUTION]
 > **Known Firmware Bug on `DH-H5A` (`V2.860.0000000.26.R`) — Front Green Status LED (`LightGlobal`):**  
-> The `Status Indicator LED` entity (`switch.<camera>_status_led`) is **disabled by default** in Home Assistant (`entity_registry_enabled_default=False`).  
+> In Home Assistant, `Status Indicator LED` is intentionally exposed **only as a read-only diagnostic binary sensor** (`binary_sensor.<camera>_status_led`), with no writable switch entity.  
 > On `DH-H5A` firmware `V2.860.0000000.26.R`, calling `configManager.setConfig("LightGlobal", ...)` over Port `37777` JSON-RPC (even with `{"Enable": true}`) overwrites an internal 16-byte block in the camera's encrypted flash configuration at offset `0x23760` (`4d85760d2339312ec949ed08e6d75ec7` → `37afe76e65aafaac7cecf9270520d4d6`), which **permanently turns off the front green status LED** across reboots even though `getConfig("LightGlobal")` still reports `Enable: true`.  
-> Do **not** enable or toggle `switch.<camera>_status_led` or run `odh led` on `DH-H5A` unless you intend to keep the green status LED permanently off (or have backed up your `146,240`-byte binary flash configuration via `await client.export_pack_config()` / `await client.import_pack_config(pack_bytes)`).
+> Do **not** run `odh led` via CLI on `DH-H5A` unless you intend to keep the green status LED permanently off (or have backed up your `146,240`-byte binary flash configuration via `await client.export_pack_config()` / `await client.import_pack_config(pack_bytes)`).
 
 ---
 

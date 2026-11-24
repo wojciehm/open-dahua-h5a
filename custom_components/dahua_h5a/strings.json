@@ -22,6 +22,14 @@
           "username": "Username",
           "password": "Password"
         }
+      },
+      "reauth_confirm": {
+        "title": "Re-authenticate Dahua H5A Camera",
+        "description": "Authentication failed for {host}. Enter the updated credentials to avoid locking out the camera account.",
+        "data": {
+          "username": "Username",
+          "password": "Password"
+        }
       }
     },
     "error": {
@@ -31,7 +39,8 @@
     },
     "abort": {
       "already_configured": "This camera is already configured",
-      "reconfigure_successful": "Camera configuration updated successfully"
+      "reconfigure_successful": "Camera configuration updated successfully",
+      "reauth_successful": "Re-authentication was successful"
     }
   },
   "options": {
@@ -69,9 +78,6 @@
       },
       "audio_detection": {
         "name": "Abnormal Sound / Baby Cry Detection"
-      },
-      "status_led": {
-        "name": "Status Indicator LED"
       },
       "audio_encode": {
         "name": "Stream Audio Recording"
@@ -143,6 +149,9 @@
           "on": "Closed",
           "off": "Open"
         }
+      },
+      "status_led": {
+        "name": "Status Indicator LED"
       }
     },
     "sensor": {

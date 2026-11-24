@@ -22,6 +22,14 @@
           "username": "Nombre de usuario",
           "password": "Contraseña"
         }
+      },
+      "reauth_confirm": {
+        "title": "Volver a autenticar la cámara Dahua H5A",
+        "description": "Falló la autenticación para {host}. Introduce las credenciales actualizadas para evitar el bloqueo de la cuenta en la cámara.",
+        "data": {
+          "username": "Nombre de usuario",
+          "password": "Contraseña"
+        }
       }
     },
     "error": {
@@ -31,7 +39,8 @@
     },
     "abort": {
       "already_configured": "Esta cámara ya está configurada",
-      "reconfigure_successful": "Configuración de la cámara actualizada correctamente"
+      "reconfigure_successful": "Configuración de la cámara actualizada correctamente",
+      "reauth_successful": "La reautenticación se realizó correctamente"
     }
   },
   "options": {
@@ -69,9 +78,6 @@
       },
       "audio_detection": {
         "name": "Detección de sonido anormal / llanto de bebé"
-      },
-      "status_led": {
-        "name": "LED indicador de estado"
       },
       "audio_encode": {
         "name": "Grabación de audio en transmisión"
@@ -143,6 +149,9 @@
           "on": "Cerrado",
           "off": "Abierto"
         }
+      },
+      "status_led": {
+        "name": "LED indicador de estado"
       }
     },
     "sensor": {

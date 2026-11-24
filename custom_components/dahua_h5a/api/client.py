@@ -334,7 +334,8 @@ class DahuaH5AClient:
         `configManager.setConfig("LightGlobal", ...)` overwrites an internal
         byte in the 16-byte `LightGlobal` flash block at offset `0x23760`
         (`145248`), which permanently keeps the green LED off even when
-        `Enable=True`. The status LED entity is therefore disabled by default,
+        `Enable=True`. Home Assistant therefore exposes `status_led` solely as a
+        read-only diagnostic binary sensor (`binary_sensor.<camera>_status_led`),
         and factory `LightGlobal` flash state (`4d85760d2339312ec949ed08e6d75ec7`)
         can be restored via `import_pack_config`.
         """

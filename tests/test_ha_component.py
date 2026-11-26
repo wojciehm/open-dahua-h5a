@@ -27,11 +27,12 @@ def test_hacs_and_manifest_valid_json() -> None:
     """Verify hacs.json, manifest.json, and all translation files match strings.json."""
     hacs = json.loads((REPO_ROOT / "hacs.json").read_text(encoding="utf-8"))
     assert "name" in hacs
+    assert hacs["homeassistant"] == "2024.11.0"
 
     manifest = json.loads((CC_DIR / "manifest.json").read_text(encoding="utf-8"))
     assert manifest["domain"] == "dahua_h5a"
     assert manifest["config_flow"] is True
-    assert manifest["version"] == "0.2.6"
+    assert manifest["version"] == "0.2.7"
 
     strings = json.loads((CC_DIR / "strings.json").read_text(encoding="utf-8"))
     expected_paths = _collect_key_paths(strings)

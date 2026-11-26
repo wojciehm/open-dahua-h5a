@@ -48,4 +48,4 @@ __all__ = [
     "parse_step1_challenge_response",
 ]
 
-__version__ = "0.2.6"
+__version__ = "0.2.7"

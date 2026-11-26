@@ -7,8 +7,8 @@
 <p align="center">
   <a href="https://github.com/wojciehm/open-dahua-h5a/releases"><img src="https://img.shields.io/github/v/release/wojciehm/open-dahua-h5a?style=for-the-badge&logo=github" alt="GitHub Release" /></a>
   <a href="https://github.com/wojciehm/open-dahua-h5a/actions/workflows/validate.yaml"><img src="https://img.shields.io/github/actions/workflow/status/wojciehm/open-dahua-h5a/validate.yaml?branch=main&style=for-the-badge&logo=homeassistant&label=HACS%20%26%20Hassfest" alt="HACS & Hassfest Validation" /></a>
-  <a href="https://github.com/hacs/integration"><img src="https://img.shields.io/badge/HACS-Integration-41BDF5.svg?style=for-the-badge&logo=homeassistantcommunitystore" alt="HACS Integration" /></a>
-  <a href="https://www.home-assistant.io/"><img src="https://img.shields.io/badge/Home%20Assistant-2024.4%2B-41BDF5.svg?style=for-the-badge&logo=homeassistant" alt="Home Assistant 2024.4+" /></a>
+  <a href="https://github.com/hacs/integration"><img src="https://img.shields.io/badge/HACS-Default-41BDF5.svg?style=for-the-badge&logo=homeassistantcommunitystore" alt="HACS Default" /></a>
+  <a href="https://www.home-assistant.io/"><img src="https://img.shields.io/badge/Home%20Assistant-2024.11%2B-41BDF5.svg?style=for-the-badge&logo=homeassistant" alt="Home Assistant 2024.11+" /></a>
   <img src="https://img.shields.io/badge/IoT%20Class-local__push-00B050.svg?style=for-the-badge" alt="IoT Class: local_push" />
   <a href="#supported-languages--community-translations"><img src="https://img.shields.io/badge/Languages-12-8A2BE2.svg?style=for-the-badge" alt="12 Supported Languages" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/github/license/wojciehm/open-dahua-h5a?style=for-the-badge" alt="MIT License" /></a>

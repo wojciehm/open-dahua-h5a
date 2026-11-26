@@ -31,7 +31,7 @@ def test_hacs_and_manifest_valid_json() -> None:
     manifest = json.loads((CC_DIR / "manifest.json").read_text(encoding="utf-8"))
     assert manifest["domain"] == "dahua_h5a"
     assert manifest["config_flow"] is True
-    assert manifest["version"] == "0.2.5"
+    assert manifest["version"] == "0.2.6"
 
     strings = json.loads((CC_DIR / "strings.json").read_text(encoding="utf-8"))
     expected_paths = _collect_key_paths(strings)
